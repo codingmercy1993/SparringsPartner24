@@ -16,3 +16,15 @@ class SearchProfileForm(forms.ModelForm):
     class Meta:
         model = SearchProfile
         exclude = ['userprofile']
+
+class SearchEngineForm(forms.Form):
+    MinAge = forms.IntegerField()
+    MaxAge = forms.IntegerField()
+    MinWeight = forms.IntegerField()
+    MaxWeight = forms.IntegerField()
+
+    choices_dict = [('boxen', 'Boxen'), ('thai', 'Thai'), ('mma', 'MMA')]
+    MartialArt = forms.CharField(widget = forms.SelectMultiple(choices = choices_dict) )
+    MaxDistance = forms.IntegerField()
+    MinNumberFights = forms.IntegerField()
+    MaxNumberFights = forms.IntegerField()

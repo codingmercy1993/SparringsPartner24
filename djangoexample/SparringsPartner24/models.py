@@ -25,4 +25,6 @@ class SearchProfile(models.Model):
     MinWeight = models.IntegerField()
     MartialArt = models.CharField(max_length=200)
     MaxDistance = models.IntegerField()
+    MinAge = models.IntegerField(default = 16)
+    MaxAge = models.IntegerField(default=99)
 
