@@ -1,0 +1,12 @@
+- template files
+- datenbank
+- /usr/local/bin/python3.9
+- source /Users/Deka/PycharmProjects/SparringPartner24/.venv/bin/activate
+- https://www.djangoproject.com/start/
+- python manage.py runserver 0:8000
+- python manage.py shell
+- template/form examples checken
+
+- search engine
+- übergänge zwischen form
+- 
