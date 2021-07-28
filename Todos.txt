@@ -9,4 +9,7 @@
 
 - search engine
 - übergänge zwischen form
-- 
+-  range slider ( https://hackernoon.com/django-tutorial-creating-a-range-slider-filter-tt28359e)
+- start seite mit links zu allem
+- eigene profil editen (user und fighter und prefs)
+- session halten mit bestimmten werten und login

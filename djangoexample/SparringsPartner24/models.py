@@ -6,6 +6,7 @@ class UserProfile(models.Model):
     UserName = models.CharField(max_length=100)
     Password = models.CharField(max_length=100)
     MailAdress = models.EmailField()
+    PhoneNumber = models.IntegerField()
 
 
 class FighterProfile(models.Model):
