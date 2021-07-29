@@ -12,6 +12,7 @@ urlpatterns = [
     path('create_search_profile/<int:userprofile_id>/', views.create_search_profile, name = 'create_search_profile'),
     path('edit_search_profile/<int:userprofile_id>/', views.edit_search_profile, name = 'edit_search_profile'),
     path('fighter_profile/<int:userprofile_id>/', views.fighter_profile, name='fighter_profile'),
-    path('search_engine/', views.search_engine, name = "search_engine")
+    path('search_engine/', views.search_engine, name = "search_engine"),
+    path('get_all_fighters/', views.get_all_fighters, name = 'get_all_fighters')
 
 ]

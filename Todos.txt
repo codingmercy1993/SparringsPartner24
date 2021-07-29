@@ -1,15 +1,15 @@
-- template files
-- datenbank
-- /usr/local/bin/python3.9
-- source /Users/Deka/PycharmProjects/SparringPartner24/.venv/bin/activate
 - https://www.djangoproject.com/start/
 - python manage.py runserver 0:8000
 - python manage.py shell
-- template/form examples checken
+- python manage.py makemigrations SparringsPartner24
+- python manage.py migrate
+- source /Users/Deka/PycharmProjects/SparringPartner24/.venv/bin/activate
+- /usr/local/bin/python3.9
 
-- search engine
-- übergänge zwischen form
+- template files
+- datenbank
+- template/form examples checken
+- search engine (nicht alle auswählen müssen)
 -  range slider ( https://hackernoon.com/django-tutorial-creating-a-range-slider-filter-tt28359e)
-- start seite mit links zu allem
-- eigene profil editen (user und fighter und prefs)
-- session halten mit bestimmten werten und login
+- session halten mit bestimmten werten und login (https://docs.djangoproject.com/en/3.2/topics/auth/default/, https://learndjango.com/tutorials/django-login-and-logout-tutorial)
+- model fields adden bzw komplettieren -> search engine query anpassen

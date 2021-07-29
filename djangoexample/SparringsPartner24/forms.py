@@ -18,13 +18,13 @@ class SearchProfileForm(forms.ModelForm):
         exclude = ['userprofile']
 
 class SearchEngineForm(forms.Form):
-    MinAge = forms.IntegerField()
-    MaxAge = forms.IntegerField()
-    MinWeight = forms.IntegerField()
-    MaxWeight = forms.IntegerField()
+    MinAge = forms.IntegerField(required=False)
+    MaxAge = forms.IntegerField(required=False)
+    MinWeight = forms.IntegerField(required=False)
+    MaxWeight = forms.IntegerField(required=False)
 
     choices_dict = [('boxen', 'Boxen'), ('thai', 'Thai'), ('mma', 'MMA')]
-    MartialArt = forms.CharField(widget = forms.SelectMultiple(choices = choices_dict) )
-    MaxDistance = forms.IntegerField()
-    MinNumberFights = forms.IntegerField()
-    MaxNumberFights = forms.IntegerField()
+    MartialArt = forms.CharField(widget = forms.SelectMultiple(choices = choices_dict), required=False )
+    MaxDistance = forms.IntegerField(required=False)
+    MinNumberFights = forms.IntegerField(required=False)
+    MaxNumberFights = forms.IntegerField(required=False)

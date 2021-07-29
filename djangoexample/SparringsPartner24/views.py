@@ -50,9 +50,11 @@ def create_user_profile(request):
 
 def edit_user_profile(request, userprofile_id):
     if request.method == 'POST':
-        form = UserProfileForm(request.POST)
+        instance = get_object_or_404(UserProfile, pk = userprofile_id)
+        form = UserProfileForm(request.POST, instance = instance)
         if form.is_valid():
-            task = form.save(commit=True)
+
+            form.save()
             
             return HttpResponseRedirect(reverse('SparringsPartner24:index'))
     else:
@@ -81,7 +83,8 @@ def create_fighter_profile(request, userprofile_id):
 
 def edit_fighter_profile(request, userprofile_id):
     if request.method == 'POST':
-        form = FighterProfileForm(request.POST)
+        instance = get_object_or_404(FighterProfile, pk = userprofile_id)
+        form = FighterProfileForm(request.POST, instance = instance)
     
         if form.is_valid():
 
@@ -117,14 +120,11 @@ def create_search_profile(request, userprofile_id):
 
 def edit_search_profile(request, userprofile_id):
     if request.method == 'POST':
-        form = SearchProfileForm(request.POST)
+        instance = get_object_or_404(SearchProfile, pk = userprofile_id)
+        form = SearchProfileForm(request.POST, instance = instance )
     
         if form.is_valid():
-
-            updated_form = form.save(commit = False)
-            updated_form.userprofile = get_object_or_404(UserProfile, pk = userprofile_id)
-            updated_form.save()
-
+            form.save()
             return HttpResponseRedirect(reverse('SparringsPartner24:index'))
             
     else:
@@ -132,3 +132,7 @@ def edit_search_profile(request, userprofile_id):
         form = SearchProfileForm(instance = search_profile)
         return render(request, 'SparringsPartner24/create_profile.html', {'form': form})
 
+def get_all_fighters(request):
+    result_list = FighterProfile.objects.all()
+    
+    return render(request, 'SparringsPartner24/search_engine_result.html', {'result_list': result_list})
