@@ -3,13 +3,17 @@
 - python manage.py shell
 - python manage.py makemigrations SparringsPartner24
 - python manage.py migrate
+- python -m smtpd -n -c DebuggingServer localhost:1025
 - source /Users/Deka/PycharmProjects/SparringPartner24/.venv/bin/activate
 - /usr/local/bin/python3.9
 
 - template files
+- frontend spielerei: https://www.w3schools.com/howto/howto_js_rangeslider.asp
 - datenbank
 - template/form examples checken
 - search engine (nicht alle auswählen müssen)
 -  range slider ( https://hackernoon.com/django-tutorial-creating-a-range-slider-filter-tt28359e)
-- session halten mit bestimmten werten und login (https://docs.djangoproject.com/en/3.2/topics/auth/default/, https://learndjango.com/tutorials/django-login-and-logout-tutorial)
+- session halten mit bestimmten werten und login (https://docs.djangoproject.com/en/3.2/topics/auth/default/,
+ https://learndjango.com/tutorials/django-login-and-logout-tutorial, 
+ https://realpython.com/django-user-management/ --> mail part)
 - model fields adden bzw komplettieren -> search engine query anpassen

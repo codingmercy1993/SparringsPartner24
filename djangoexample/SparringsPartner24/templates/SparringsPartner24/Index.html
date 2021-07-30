@@ -1,4 +1,7 @@
-<h1>SparringsPartner24</h1>
+
+{% extends 'base.html' %}
+{% block content %}
+Hello, {{ user.username|default:'Guest' }}!
 
 <p> Was geht ^^ </p>
 <p> Bist grad auf Art App wo man andere leute zum bügeln finden kann so </p>
@@ -11,3 +14,15 @@
     <p><a href="{% url 'SparringsPartner24:edit_fighter_profile' 1 %}"> Update your Fighter Profile</a></p>  
     <p><a href="{% url 'SparringsPartner24:edit_search_profile' 1 %}"> Update your Preference Profile</a></p>        
 </ul>
+
+
+<div>
+    {% if user.is_authenticated %}
+        <a href="{% url 'SparringsPartner24:accounts:logout' %}">Logout</a>
+        <a href="{% url 'SparringsPartner24:password_change_custom' %}">Change password</a>
+    {% else %}
+        <a href="{% url 'SparringsPartner24:accounts:login' %}">Login</a>
+    {% endif %}
+</div>
+{% endblock %}
+
