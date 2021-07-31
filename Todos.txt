@@ -14,5 +14,5 @@
 - template/form examples checken
 - search engine (nicht alle auswählen müssen)
 -  range slider ( https://hackernoon.com/django-tutorial-creating-a-range-slider-filter-tt28359e)
-- session halten mit bestimmten werten 
 - model fields adden bzw komplettieren -> search engine query anpassen
+- create fighter part und so einbauen in prozess
