@@ -1,16 +1,19 @@
 from django.db import models
 import datetime
 from django.utils import timezone
+from django.contrib.auth.models import AbstractUser
+from django.db import models
+from django.conf import settings
 
-class UserProfile(models.Model):
-    UserName = models.CharField(max_length=100)
-    Password = models.CharField(max_length=100)
-    MailAdress = models.EmailField()
+class UserProfile(AbstractUser):
+    # add additional fields in here
     PhoneNumber = models.IntegerField(blank=True, null=True)
 
+    def __str__(self):
+        return self.username
 
 class FighterProfile(models.Model):
-    userprofile = models.ForeignKey(UserProfile, on_delete=models.CASCADE, default=1)
+    userprofile = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     BirthDay = models.DateField(blank=True, null=True)
     Location = models.CharField(max_length=200, blank=True, null=True)
     Weight = models.IntegerField(blank=True, null=True)
@@ -21,7 +24,7 @@ class FighterProfile(models.Model):
 
 
 class SearchProfile(models.Model):
-    userprofile = models.ForeignKey(UserProfile, on_delete=models.CASCADE, default = 1)
+    userprofile = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     MaxWeight = models.IntegerField(blank=True, null=True)
     MinWeight = models.IntegerField(blank=True, null=True)
     MartialArt = models.CharField(max_length=200, blank=True, null=True)
