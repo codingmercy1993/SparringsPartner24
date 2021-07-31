@@ -1,6 +1,6 @@
 <h1> Matching Fighter Profiles </h1>
 <ul>
 {% for result in result_list %}
-    <h1><a href="{% url 'SparringsPartner24:fighter_profile' result.id %}"> {{ result.userprofile.UserName }}</a></h1>    
+    <h1><a href="{% url 'SparringsPartner24:fighter_profile' result.id %}"> {{ result.username }}</a></h1>    
 {% endfor %}
 </ul>
