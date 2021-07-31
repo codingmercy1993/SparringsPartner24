@@ -1,17 +1,31 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.db.models import Q
+from django.contrib.auth import login
 
 # Create your views here.
 
 from django.http import HttpResponse
 
-from .forms import FighterProfileForm, UserProfileForm, SearchProfileForm, SearchEngineForm
+from .forms import FighterProfileForm, UserProfileForm, SearchProfileForm, SearchEngineForm, UserProfileCreationForm
 from .models import UserProfile, FighterProfile, SearchProfile
 
 def index(request):
     return render(request, 'SparringsPartner24/Index.html')
+
+def register(request):
+    if request.method == "GET":
+        return render(
+            request, "SparringsPartner24/register.html",
+            {"form": UserProfileCreationForm}
+        )
+    elif request.method == "POST":
+        form = UserProfileCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+        return render(request, 'SparringsPartner24/Index.html')
 
 def fighter_profile(request, userprofile_id):
     result = FighterProfile.objects.select_related("userprofile").get(pk=userprofile_id)

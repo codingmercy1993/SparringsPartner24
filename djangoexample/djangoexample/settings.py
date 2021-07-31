@@ -36,7 +36,6 @@ EMAIL_PORT = 1025
 # Application definition
 
 INSTALLED_APPS = [
-    'polls.apps.PollsConfig',
     'SparringsPartner24.apps.Sparringspartner24Config',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -45,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+AUTH_USER_MODEL = 'SparringsPartner24.UserProfile'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
