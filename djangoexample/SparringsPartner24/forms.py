@@ -25,7 +25,7 @@ class UserProfileForm(forms.ModelForm):
 class FighterProfileForm(forms.ModelForm):
     class Meta:
         model = FighterProfile
-        exclude = ['userprofile']
+        exclude = ['userprofile', 'experience_years']
 
 class SearchProfileForm(forms.ModelForm):
     class Meta:
@@ -33,13 +33,21 @@ class SearchProfileForm(forms.ModelForm):
         exclude = ['userprofile']
 
 class SearchEngineForm(forms.Form):
-    MinAge = forms.IntegerField(required=False)
-    MaxAge = forms.IntegerField(required=False)
-    MinWeight = forms.IntegerField(required=False)
-    MaxWeight = forms.IntegerField(required=False)
-
+    max_distance = forms.IntegerField(required=False)
     choices_dict = [('boxen', 'Boxen'), ('thai', 'Thai'), ('mma', 'MMA')]
-    MartialArt = forms.CharField(widget = forms.SelectMultiple(choices = choices_dict), required=False )
-    MaxDistance = forms.IntegerField(required=False)
-    MinNumberFights = forms.IntegerField(required=False)
-    MaxNumberFights = forms.IntegerField(required=False)
+    martial_art = forms.CharField(widget = forms.SelectMultiple(choices = choices_dict), required=False )
+
+    max_weight = forms.IntegerField(required=False)
+    min_weight = forms.IntegerField(required=False)
+    
+    max_age = forms.IntegerField(required=False)
+    min_age = forms.IntegerField(required=False)
+    
+    max_fights = forms.IntegerField(required=False)
+    min_fights = forms.IntegerField(required=False)
+
+    max_experience_years = forms.IntegerField(required = False)
+    min_experience_years = forms.IntegerField(required = False)
+
+
+

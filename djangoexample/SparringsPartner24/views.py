@@ -37,11 +37,42 @@ def search_engine(request):
         form = SearchEngineForm(request.POST)
         if form.is_valid():
             
-            result_list = FighterProfile.objects.filter(Q(Weight__gte = form.cleaned_data['MinWeight']) | Q(Weight__lte = form.cleaned_data['MaxWeight']),
-                    MartialArt = form.cleaned_data['MartialArt'])
-                # weitere kriterien fehlen
-            result_list = FighterProfile.objects.all()
+            filters = {}
+            for key, value in request.POST.items():
+                print(key, value)
+                if value != '':
 
+                    if key == 'max_weight':
+                        filters['weight__lte'] = value
+                    elif key == 'min_weight':
+                        filters['weight__gte'] = value
+
+                    #elif key == ['max_age']:
+                    #    filters['age__lte'] = value
+                    #elif key == ['min_age']:
+                    #    filters['age__gte'] = value
+                    #todo: calculaten mit birthday
+
+                    elif key == 'max_fights':
+                        filters['fight_record__lte'] = value
+                    elif key == 'min_fights':
+                        filters['fight_record__gte'] = value
+                    
+                    elif key == 'max_experience_years':
+                        filters['experience_years__lte'] = value
+                    elif key == 'min_experience_years':
+                        filters['experience_years__gte'] = value
+
+                    elif key == 'max_distance':
+                        # todo: distance berechnen
+                        pass
+                    
+                    elif key == 'martial_art':
+                        filters['martial_art__icontains'] = value
+
+            print(filters)
+            result_list = FighterProfile.objects.filter(**filters)
+            print(result_list)
             return render(request, 'SparringsPartner24/search_engine_result.html', {'result_list': result_list})
     else:
         form = SearchEngineForm()

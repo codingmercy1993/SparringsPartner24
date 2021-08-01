@@ -11,8 +11,11 @@
 - template files
 - frontend spielerei: https://www.w3schools.com/howto/howto_js_rangeslider.asp
 - datenbank
-- template/form examples checken
-- search engine (nicht alle auswählen müssen)
+- search engine (filter customizen auf fields mit berechnen, default werte)
 -  range slider ( https://hackernoon.com/django-tutorial-creating-a-range-slider-filter-tt28359e)
 - model fields adden bzw komplettieren -> search engine query anpassen
 - create fighter part und so einbauen in prozess
+- chat feature (https://github.com/narrowfail/django-channels-chat)
+- login required verteilen
+- zurück buttons
+- zurück per click auf logo
