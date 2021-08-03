@@ -6,19 +6,18 @@ Hello, {{ user.username|default:'Guest' }}!
 <p> Was geht ^^ </p>
 <p> Bist grad auf Art App wo man andere leute zum bügeln finden kann so </p>
 
-<p> Ja kp das kannste halt machen:</p>
-<ul>
-    <p><a href="{% url 'SparringsPartner24:search_engine' %}"> Search Engine</a></p>
-    <p><a href="{% url 'SparringsPartner24:get_all_fighters' %}"> Check Out all Fighters</a></p>
-    <p><a href="{% url 'SparringsPartner24:edit_user_profile' %}"> Edit your User Profile</a></p>
-    <p><a href="{% url 'SparringsPartner24:edit_fighter_profile' %}"> Update your Fighter Profile</a></p>  
-    <p><a href="{% url 'SparringsPartner24:edit_search_profile' %}"> Update your Preference Profile</a></p> 
-    <p><a href="{% url 'SparringsPartner24:create_fighter_profile' %}"> TEST Profile Creator</a></p>          
-</ul>
-
 
 <div>
     {% if user.is_authenticated %}
+    <p> Ja kp das kannste halt machen:</p>
+    <ul>
+        <p><a href="{% url 'SparringsPartner24:search_engine' %}"> Search Engine</a></p>
+        <p><a href="{% url 'SparringsPartner24:get_all_fighters' %}"> Check Out all Fighters</a></p>
+        <p><a href="{% url 'SparringsPartner24:edit_user_profile' %}"> Edit your User Profile</a></p>
+        <p><a href="{% url 'SparringsPartner24:edit_fighter_profile' %}"> Update your Fighter Profile</a></p>  
+        <p><a href="{% url 'SparringsPartner24:edit_search_profile' %}"> Update your Preference Profile</a></p> 
+        <p><a href="{% url 'SparringsPartner24:create_fighter_profile' %}"> TEST Profile Creator</a></p>          
+    </ul>
         <a href="{% url 'logout' %}">Logout</a>
         <a href="{% url 'password_change' %}">Change password</a>
     {% else %}
