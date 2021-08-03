@@ -7,12 +7,22 @@ from django.contrib.auth import login
 # Create your views here.
 
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 
 from .forms import FighterProfileForm, UserProfileForm, SearchProfileForm, SearchEngineForm, UserProfileCreationForm
 from .models import UserProfile, FighterProfile, SearchProfile
 
 def index(request):
-    return render(request, 'SparringsPartner24/Index.html')
+
+    if request.user.is_authenticated:
+        # flag iwann wo profile createn kann
+        current_user = request.user
+        if FighterProfile.objects.filter( pk = current_user.id ).exists():
+            print("dä")
+            return render(request, "SparringsPartner24/Index.html")
+        pass
+
+    return render(request, 'SparringsPartner24/Index2.html')
 
 def register(request):
     if request.method == "GET":
@@ -27,11 +37,13 @@ def register(request):
             login(request, user)
         return render(request, 'SparringsPartner24/Index.html')
 
+@login_required
 def fighter_profile(request, userprofile_id):
     result = FighterProfile.objects.select_related("userprofile").get(pk=userprofile_id)
 
     return render(request, 'SparringsPartner24/fighter_profile.html', {'profile': result})
 
+@login_required
 def search_engine(request):
     if request.method == 'POST':
         form = SearchEngineForm(request.POST)
@@ -79,7 +91,7 @@ def search_engine(request):
         
     return render(request, 'SparringsPartner24/create_profile.html', {'form': form})
 
-
+@login_required
 def edit_user_profile(request):
     current_user = request.user
     if request.method == 'POST':
@@ -95,8 +107,7 @@ def edit_user_profile(request):
         form = UserProfileForm(instance = user_profile)
         return render(request, 'SparringsPartner24/create_profile.html', {'form': form})
 
-
-
+@login_required
 def create_fighter_profile(request):
     if request.method == 'POST':
         form = FighterProfileForm(request.POST)
@@ -114,6 +125,7 @@ def create_fighter_profile(request):
         form = FighterProfileForm()
     return render(request, 'SparringsPartner24/create_profile.html', {'form': form})
 
+@login_required
 def edit_fighter_profile(request):
     current_user = request.user
 
@@ -135,7 +147,7 @@ def edit_fighter_profile(request):
         form = FighterProfileForm(instance = fighter_profile)
         return render(request, 'SparringsPartner24/create_profile.html', {'form': form})
 
-
+@login_required
 def create_search_profile(request):
     current_user = request.user
     if request.method == 'POST':
@@ -154,6 +166,7 @@ def create_search_profile(request):
 
     return render(request, 'SparringsPartner24/create_profile.html', {'form': form})
 
+@login_required
 def edit_search_profile(request):
     current_user = request.user
     if request.method == 'POST':
@@ -169,7 +182,7 @@ def edit_search_profile(request):
         form = SearchProfileForm(instance = search_profile)
         return render(request, 'SparringsPartner24/create_profile.html', {'form': form})
 
+@login_required
 def get_all_fighters(request):
-    result_list = UserProfile.objects.all()
-
+    result_list = FighterProfile.objects.all()
     return render(request, 'SparringsPartner24/search_engine_result.html', {'result_list': result_list})
