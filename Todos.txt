@@ -16,3 +16,4 @@
 - create fighter part und so einbauen in prozess (unterscheidung ob profile da ist richtig machen in index view)
 - chat feature (https://github.com/narrowfail/django-channels-chat)
 - zurück buttons
+- nach register auf startseite bei neuladen bricht ab weil noch auf register link is
