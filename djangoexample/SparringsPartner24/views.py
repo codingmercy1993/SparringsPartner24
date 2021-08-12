@@ -17,12 +17,11 @@ def index(request):
     if request.user.is_authenticated:
         # flag iwann wo profile createn kann
         current_user = request.user
-        if FighterProfile.objects.filter( pk = current_user.id ).exists():
-            print("dä")
-            return render(request, "SparringsPartner24/Index.html")
-        pass
+        has_fighterprofile = UserProfile.objects.filter(fighterprofile__isnull=True, id = current_user.id).exists()
+        has_searchprofile = UserProfile.objects.filter(searchprofile__isnull=True, id = current_user.id).exists()
+        return render(request, "SparringsPartner24/Index.html", {"has_fighterprofile": has_fighterprofile, "has_searchprofile": has_searchprofile})
 
-    return render(request, 'SparringsPartner24/Index2.html')
+    return render(request, 'SparringsPartner24/Index.html')
 
 def register(request):
     if request.method == "GET":
