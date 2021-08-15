@@ -17,7 +17,7 @@ Hello, {{ user.username|default:'Guest' }}!
         <p><a href="{% url 'SparringsPartner24:get_all_fighters' %}"> Check Out all Fighters</a></p>
         <p><a href="{% url 'SparringsPartner24:edit_user_profile' %}"> Edit your User Profile</a></p>
 
-        {% if not has_fightprofile %}
+        {% if not has_fighterprofile %}
         <p><a href="{% url 'SparringsPartner24:edit_fighter_profile' %}"> CREATE your Fighter Profile !!!!</a></p> 
         {% else %}
         <p><a href="{% url 'SparringsPartner24:edit_fighter_profile' %}"> Update your Fighter Profile</a></p> 

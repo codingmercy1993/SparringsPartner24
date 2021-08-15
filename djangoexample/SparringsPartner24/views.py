@@ -17,8 +17,9 @@ def index(request):
     if request.user.is_authenticated:
         # flag iwann wo profile createn kann
         current_user = request.user
-        has_fighterprofile = UserProfile.objects.filter(fighterprofile__isnull=True, id = current_user.id).exists()
-        has_searchprofile = UserProfile.objects.filter(searchprofile__isnull=True, id = current_user.id).exists()
+        has_fighterprofile = UserProfile.objects.filter(fighterprofile__isnull=False, id = current_user.id).exists()
+        has_searchprofile = UserProfile.objects.filter(searchprofile__isnull=False, id = current_user.id).exists()
+        
         return render(request, "SparringsPartner24/Index.html", {"has_fighterprofile": has_fighterprofile, "has_searchprofile": has_searchprofile})
 
     return render(request, 'SparringsPartner24/Index.html')

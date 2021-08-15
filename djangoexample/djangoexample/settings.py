@@ -37,6 +37,8 @@ EMAIL_PORT = 1025
 
 INSTALLED_APPS = [
     'SparringsPartner24.apps.Sparringspartner24Config',
+    'channels',
+    'chat',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -130,3 +132,5 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+ASGI_APPLICATION = 'djangoexample.asgi.application'

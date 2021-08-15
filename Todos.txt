@@ -8,12 +8,13 @@
 - /usr/local/bin/python3.9
 
 
-- template files
 - frontend spielerei: https://www.w3schools.com/howto/howto_js_rangeslider.asp
+    - range slider ( https://hackernoon.com/django-tutorial-creating-a-range-slider-filter-tt28359e)
 - datenbank
 - search engine (filter customizen auf fields mit berechnen, default werte)
--  range slider ( https://hackernoon.com/django-tutorial-creating-a-range-slider-filter-tt28359e)
-- create fighter part und so einbauen in prozess (unterscheidung ob profile da ist richtig machen in index view)
-- chat feature (https://github.com/narrowfail/django-channels-chat)
+- chat feature (https://github.com/narrowfail/django-channels-chat) https://django-private-chat.readthedocs.io/en/latest/
+https://django-private-chat.readthedocs.io/en/latest/
+https://channels.readthedocs.io/en/stable/, 
 - zurück buttons
 - nach register auf startseite bei neuladen bricht ab weil noch auf register link is
+- edit search profile geht net
