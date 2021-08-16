@@ -36,6 +36,9 @@ EMAIL_PORT = 1025
 
 # Application definition
 
+# junge das muss iwann wieder weg
+os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true" 
+
 INSTALLED_APPS = [
     'SparringsPartner24.apps.Sparringspartner24Config',
     'chat',

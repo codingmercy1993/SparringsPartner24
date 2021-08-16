@@ -3,6 +3,7 @@
 - python manage.py shell
 - python manage.py makemigrations SparringsPartner24
 - python manage.py migrate
+- python manage.py run_chat_server
 - python -m smtpd -n -c DebuggingServer localhost:1025
 - source /Users/Deka/PycharmProjects/SparringPartner24/.venv/bin/activate
 - /usr/local/bin/python3.9
@@ -10,12 +11,26 @@
 
 - frontend spielerei: https://www.w3schools.com/howto/howto_js_rangeslider.asp
     - range slider ( https://hackernoon.com/django-tutorial-creating-a-range-slider-filter-tt28359e)
-- datenbank
 - search engine (filter customizen auf fields mit berechnen, default werte)
-- chat feature (https://github.com/Bearle/django-private-chat/tree/dev/example/example in main integrieren)"!
+- chat
+    - link in profil rein
+    - eigene user net nur sehen
 - zurück buttons
 - nach register auf startseite bei neuladen bricht ab weil noch auf register link is
 - edit search profile geht net
+
+
+
+
+
+
+
+
+
+iwann später
+- datenbank
+- async problem mit privat-chat und 
+    dem os.environ eintrag in settings.py lösen
 
 
 
