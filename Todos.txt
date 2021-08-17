@@ -14,9 +14,8 @@
 - user anlegen die default werden entsprechen
 - chat
     - link in profil rein
-    - eigene user net nur sehen
+    - bei start noch eigene window gezeigt
 - nach register auf startseite bei neuladen bricht ab weil noch auf register link is
-- fighter profile view anpassen (wieso so viele profile?)
 
 
 

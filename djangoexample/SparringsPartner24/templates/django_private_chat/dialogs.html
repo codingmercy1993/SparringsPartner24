@@ -20,10 +20,6 @@
                             {% for dialog in object_list %}
                                 <li>
                                     {% if dialog.owner == request.user %}
-                                        {% with dialog.opponent.username as username %}
-                                            <a href="{% url 'dialogs_detail' username %}" id="user-{{ username }}"
-                                               class="btn btn-danger">{% trans "Chat with" %} {{ username }}</a>
-                                        {% endwith %}
                                     {% else %}
                                         {% with dialog.owner.username as username %}
                                             <a href="{% url 'dialogs_detail' username %}" id="user-{{ username }}"
@@ -52,6 +48,8 @@
                     <p class="text-danger" id="offline-status" style="display: none">{% trans "Offline" %}</p>
 
                     <div class="messages-container">
+                        {% if dialog.owner == request.user %}
+                        {% else %}
                         <div id="messages" class="messages">
                             {% for msg in active_dialog.messages.all %}
                                 <div class="row  {% if msg.read %}msg-read{% else %}msg-unread{% endif %} {% if msg.sender != request.user %}opponent{% endif %}"
@@ -65,6 +63,7 @@
                                 </div>
                             {% endfor %}
                         </div>
+                        {% endif %}
                     </div>
                 </div>
 

@@ -147,5 +147,5 @@ def edit_search_profile(request):
 
 @login_required
 def get_all_fighters(request):
-    result_list = FighterProfile.objects.all()
+    result_list = UserProfile.objects.all()
     return render(request, 'SparringsPartner24/show_all_fighters.html', {'result_list': result_list})
