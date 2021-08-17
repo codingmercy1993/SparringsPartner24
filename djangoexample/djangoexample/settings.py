@@ -41,7 +41,6 @@ os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true"
 
 INSTALLED_APPS = [
     'SparringsPartner24.apps.Sparringspartner24Config',
-    'chat',
     'django_private_chat',
     'django.contrib.admin',
     'django.contrib.auth',

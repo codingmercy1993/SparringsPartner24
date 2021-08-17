@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2> All Fighter Profiles </h2>
+<ul>
+{% for result in result_list %}
+    <h1><a href="{% url 'SparringsPartner24:fighter_profile' result.userprofile.id %}"> {{ result.userprofile.username }}</a></h1>
+{% endfor %}
+</ul>
+
+<a href="{% url 'SparringsPartner24:index' %}">Zurück</a>
+
+{% endblock %}

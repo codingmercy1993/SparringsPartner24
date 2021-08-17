@@ -9,6 +9,6 @@
     <input type="submit" value="Submit">
 </form>
 
-<a href="{{ request.META.HTTP_REFERER }}">Zurück</a>
+<a href="{% url 'SparringsPartner24:index' %}">Zurück</a>
 
 {% endblock %}

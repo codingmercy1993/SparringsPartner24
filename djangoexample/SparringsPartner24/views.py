@@ -89,7 +89,7 @@ def search_engine(request):
     else:
         form = SearchEngineForm()
         
-    return render(request, 'SparringsPartner24/create_profile.html', {'form': form})
+    return render(request, 'SparringsPartner24/search_engine.html', {'form': form})
 
 @login_required
 def edit_user_profile(request):
@@ -106,24 +106,6 @@ def edit_user_profile(request):
         user_profile = get_object_or_404(UserProfile, pk = current_user.id)
         form = UserProfileForm(instance = user_profile)
         return render(request, 'SparringsPartner24/create_profile.html', {'form': form})
-
-@login_required
-def create_fighter_profile(request):
-    if request.method == 'POST':
-        form = FighterProfileForm(request.POST)
-        current_user = request.user
-        if form.is_valid():
-
-            updated_form = form.save(commit = False)
-            userprofile_object = get_object_or_404(UserProfile, pk = current_user.id)
-            updated_form.userprofile = userprofile_object
-            updated_form.save()
-
-            return HttpResponseRedirect(reverse('SparringsPartner24:create_search_profile'))
-            
-    else:
-        form = FighterProfileForm()
-    return render(request, 'SparringsPartner24/create_profile.html', {'form': form})
 
 @login_required
 def edit_fighter_profile(request):
@@ -148,25 +130,6 @@ def edit_fighter_profile(request):
         return render(request, 'SparringsPartner24/create_profile.html', {'form': form})
 
 @login_required
-def create_search_profile(request):
-    current_user = request.user
-    if request.method == 'POST':
-        form = SearchProfileForm(request.POST)
-    
-        if form.is_valid():
-
-            updated_form = form.save(commit = False)
-            updated_form.userprofile = get_object_or_404(UserProfile, pk = current_user.id)
-            updated_form.save()
-
-            return HttpResponseRedirect(reverse('SparringsPartner24:index'))
-            
-    else:
-        form = SearchProfileForm()
-
-    return render(request, 'SparringsPartner24/create_profile.html', {'form': form})
-
-@login_required
 def edit_search_profile(request):
     current_user = request.user
     if request.method == 'POST':
@@ -185,4 +148,4 @@ def edit_search_profile(request):
 @login_required
 def get_all_fighters(request):
     result_list = FighterProfile.objects.all()
-    return render(request, 'SparringsPartner24/search_engine_result.html', {'result_list': result_list})
+    return render(request, 'SparringsPartner24/show_all_fighters.html', {'result_list': result_list})

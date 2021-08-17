@@ -20,8 +20,7 @@ from django.urls import include, path
 
 urlpatterns = [
     path('SparringsPartner24/', include('SparringsPartner24.urls')),
-    path('chat/', include('chat.urls')),
     path('admin/', admin.site.urls),
     path("accounts/", include("django.contrib.auth.urls")),
-    path("", include('django_private_chat.urls')),
+    path("chat/", include('django_private_chat.urls')), #/dialogs
 ]

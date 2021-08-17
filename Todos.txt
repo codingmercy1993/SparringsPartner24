@@ -11,13 +11,12 @@
 
 - frontend spielerei: https://www.w3schools.com/howto/howto_js_rangeslider.asp
     - range slider ( https://hackernoon.com/django-tutorial-creating-a-range-slider-filter-tt28359e)
-- search engine (filter customizen auf fields mit berechnen, default werte)
+- user anlegen die default werden entsprechen
 - chat
     - link in profil rein
     - eigene user net nur sehen
-- zurück buttons
 - nach register auf startseite bei neuladen bricht ab weil noch auf register link is
-- edit search profile geht net
+- fighter profile view anpassen (wieso so viele profile?)
 
 
 
