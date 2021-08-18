@@ -1,0 +1,253 @@
+﻿@model UI.UMH.Betrugspraevention.Web.ViewModels.FeatureSetViewModel
+@{ ViewBag.Title = "Betrugsprävention"; }
+@using UI.UMH.Betrugspraevention.Web.Data;
+@using UI.UMH.Betrugspraevention.Web.Models;
+@using UI.UMH.Betrugspraevention.Web.Extensions;
+@{ var data = ViewBag.Message;}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS -->
+    <!--<link rel="stylesheet" type="text/css" href="../../Content/bootstrap.min.css" />-->
+    <link rel="stylesheet" type="text/css" href="~/Content/style.css" />
+</head>
+
+<body>
+    <div class="container row p-0 m-0" id="mainclass">
+        <hr class="light-100" />
+        <div class="col-md-3 col-lg-2 pb-3">
+            <div class="list-group" id="list-tab" role="tablist">
+                @{int listItemCounter = 1;}
+                @foreach (var featureSetItem in Model.FeatureSets)
+                {
+                    <a class="list-group-item list-group-item-action @(featureSetItem.FeatureSetId == (int)TempData["featureSetId"]  ? "active" : string.Empty)" id="list-@featureSetItem.FeatureSetId-list" onclick="getMainView(@featureSetItem.FeatureSetId)" data-toggle="list" href="#list-@featureSetItem.FeatureSetId" role="tab" aria-controls="@featureSetItem.FeatureSetId">@featureSetItem.FeatureSetName</a>
+                    listItemCounter++;
+                }
+                <hr class="light-100" />
+                <button type="button" class="btn btn-outline-union" onclick="getNeu()">Neues Feature Set</button>
+            </div>
+        </div>
+        <div class="col-md-9 col-lg-10">
+            <div class="tab-content" id="nav-tabContent">
+                @{int checkBoxCounter = 1;}
+
+                @foreach (var featureSetItem in Model.FeatureSets)
+                {
+                    <div class="tab-pane fade @(featureSetItem.FeatureSetId == (int)TempData["featureSetId"]  ? "show active" : string.Empty)" id="list-@featureSetItem.FeatureSetId" role="tabpanel" aria-labelledby="list-@featureSetItem.FeatureSetId-list">
+                        @if (ViewBag.Flag)
+                        {
+
+                            <div class="container row off">
+                                <h3>@featureSetItem.FeatureSetName</h3>
+                                <div>
+                                    @if ((featureSetItem.ProcessingStateId == MyState.NotProcessed) || (featureSetItem.ProcessingStateId == MyState.WaitForProcessing))
+                                    {
+                                        <button type="button" class="btn btn-outline-union btn-sm-union offset-2" onclick="getRename(@featureSetItem.FeatureSetId)">Umbennenen</button>
+                                    }
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            List<UI.UMH.Betrugspraevention.Web.Models.FeatureSet> selectedFeatureSet = Model.FeatureSets.Where(x => x.FeatureSetId == featureSetItem.FeatureSetId).ToList();
+                            using (Ajax.BeginForm("RenameConfirmed", new AjaxOptions() { HttpMethod = "Post", UpdateTargetId = "mainclass" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <div class="container row off">
+                                    <h3>@Html.EditorFor(selectedFeatureSetList => selectedFeatureSet[0].FeatureSetName, new { htmlAttributes = new { @class = "form-control" } })</h3>
+                                    @Html.HiddenFor(selectedFeatureSetlList => selectedFeatureSet[0].CreationDate)
+                                    @Html.HiddenFor(selectedFeatureSetList => selectedFeatureSet[0].FeatureSetId)
+                                    <div>
+                                        <input type="submit" value="Speichern" class="btn btn-outline-dark" />
+                                    </div>
+                                </div>
+                            }
+                        }
+                        <h6>Status: @featureSetItem.ProcessingStateId.GetDisplayName()</h6>
+
+                        @using (Ajax.BeginForm("Save", new AjaxOptions() { HttpMethod = "Post", UpdateTargetId = "mainclass" }))
+                        {
+                            List<UI.UMH.Betrugspraevention.Web.Models.FeatureSet_Feature> selectedFeatures = Model.DetailedFeatures.Where(x => x.FeatureSetId == (int)TempData["featureSetId"]).ToList();
+                            @Html.AntiForgeryToken()
+
+                            bool disabled;
+                            string stateClass;
+                            string card;
+
+                            switch (selectedFeatures.Select(x => x.FeatureSet.ProcessingStateId).First())
+                            {
+                                case MyState.InProcessing:
+                                    stateClass = "in-processing-card";
+                                    card = "card-content-disabled";
+                                    disabled = true;
+                                    break;
+                                case MyState.ProcessedSuccesfully:
+                                    stateClass = "processed-succesfully-card";
+                                    card = "card-content-disabled";
+                                    disabled = true;
+                                    break;
+                                case MyState.ProcessingFailed:
+                                    stateClass = "processing-failed-card";
+                                    card = "card-content-disabled";
+                                    disabled = true;
+                                    break;
+                                default:
+                                    stateClass = "c-card";
+                                    card = "card-content";
+                                    disabled = false;
+                                    break;
+                            }
+
+                            <div class="grid-wrapper container row" id="dropzone">
+                                <!-- hier müsstest du über alle gespeicherten json-Einträge iterieren -->
+                                @for (int featureCounter = 0; featureCounter < selectedFeatures.Count(); featureCounter++)
+                                {
+                                    <div id="record-id-@checkBoxCounter" class="card-wrapper node" draggable="true">
+                                        <!-- die Checkbox sollte über name und value ausgelesen werden können. Glaube ich zumindest :D -->
+                                        @if (disabled)
+                                        {
+                                            @Html.CheckBoxFor(selectedFeaturesList => selectedFeatures[featureCounter].Selected, new { @class = stateClass, id = checkBoxCounter, @disabled = disabled })
+                                        }
+                                        else
+                                        {
+                                            @Html.CheckBoxFor(selectedFeaturesList => selectedFeatures[featureCounter].Selected, new { @class = stateClass, id = checkBoxCounter })
+                                        }
+
+                                        <div class=@card>
+                                            <label for="@checkBoxCounter">
+                                                <h4>@Html.DisplayFor(selectedFeaturesList => selectedFeatures[featureCounter].Feature.FeatureName)</h4>
+                                                <p class="small-meta dim">@Html.DisplayFor(selectedFeaturesList => selectedFeatures[featureCounter].Feature.FeatureHeader)</p>
+                                            </label>
+                                            @Html.HiddenFor(selectedFeaturesList => selectedFeatures[featureCounter].FeatureSetId)
+                                            @Html.HiddenFor(selectedFeaturesList => selectedFeatures[featureCounter].FeatureSet_FeatureId)
+                                            @Html.HiddenFor(selectedFeaturesList => selectedFeatures[featureCounter].FeatureId)
+                                        </div>
+                                    </div>
+                                    checkBoxCounter++;
+                                }
+                            </div>
+                            <hr class="light-100" />
+                            <div class="container pt-3">
+                                @if (disabled & selectedFeatures.Select(x => x.FeatureSet.ProcessingStateId).First() == MyState.InProcessing)
+                                {
+                                    <button type="button" class="btn btn-union" disabled="disabled" onclick="javascript:return false;">KI-Analyse starten</button>
+                                    <input type="submit" value="speichern" class="btn btn-union-confirm" disabled="disabled" />
+                                    <input type="submit" value="löschen" class="btn btn-danger" disabled="disabled" />
+                                }
+                                else if (disabled)
+                                {
+                                    <button type="button" class="btn btn-union" disabled="disabled" onclick="javascript:return false;">KI-Analyse starten</button>
+                                    <input type="submit" value="speichern" class="btn btn-union-confirm" disabled="disabled" />
+                                    <button type="button" class="btn btn-danger" onclick="confirmDeletion(@featureSetItem.FeatureSetId, '@featureSetItem.FeatureSetName')">löschen</button>
+                                }
+                                else
+                                {
+                                    <button type="button" class="btn btn-union" onclick="getProcess(@featureSetItem.FeatureSetId, '@featureSetItem.FeatureSetName')">KI-Analyse starten</button>
+                                    <input type="submit" formaction="Save" value="speichern" class="btn btn-union-confirm" onclick="successfullySaved('@featureSetItem.FeatureSetName')" />
+                                    <button type="button" class="btn btn-danger" onclick="confirmDeletion(@featureSetItem.FeatureSetId, '@featureSetItem.FeatureSetName')">löschen</button>
+                                }
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval"),
+    @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.js"),
+    @Scripts.Render("~/Scripts/jquery-3.5.1.js")
+}
+
+
+<script>
+    function getMainView(featureSetId) {
+        $.ajax({
+            url: '@Url.Action("MainView", "FeatureSet")',
+            type: "GET",
+            data: { id: featureSetId },
+        }).done(function (r) { $('#mainclass').html(r); });
+    }
+</script>
+
+<script>
+    function getRename(featureSetId) {
+        $.ajax({
+            url: '@Url.Action("Rename", "FeatureSet")',
+            type: "GET",
+            data: { id: featureSetId },
+        }).done(function (r) {$('#mainclass').html(r);});
+    }
+</script>
+
+<script>
+    function getProcess(featureSetId, name) {
+        $.ajax({
+            url: '@Url.Action("Process", "FeatureSet")',
+            type: "GET",
+            data: { id: featureSetId },
+        }).done(function (r) { $('#mainclass').html(r); });
+        Swal.fire({
+            icon: 'success',
+            title: name + ' wurde in die Warteschlange aufgenommen',
+            showConfirmButton: false,
+            timer: 1500
+        })
+
+    }
+</script>
+
+<script>
+    function getNeu(featureSetId) {
+        $.ajax({
+            url: '@Url.Action("Neu", "FeatureSet")',
+            type: "GET",
+            data: { id: featureSetId },
+        }).done(function (r) {$('#mainclass').html(r);});
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script>
+    function successfullySaved(name) {
+
+        Swal.fire({
+            icon: 'success',
+            title: name + ' wurde gespeichert',
+            showConfirmButton: false,
+            timer: 1500
+        })
+    }
+</script>
+<script>
+    function deleteFeature(featureSetId) {
+        $.ajax({
+            url: '@Url.Action("DeleteConfirmed", "FeatureSet")',
+            type: "GET",
+            data: { id: featureSetId },
+        }).done(function (r) {$('#mainclass').html(r);});
+    }
+
+    function confirmDeletion(id, name) {
+        Swal.fire({
+            title: 'Bist du dir sicher?',
+            text: "Das Löschen eines Feature Sets kann nicht rückgängig gemacht werden!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ja, ' + name + ' soll gelöscht werden!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Gelöscht!',
+                    'Das Feature Set ' + name + ' wurde gelöscht.',
+                    'success'
+                )
+                deleteFeature(id);
+            }
+        })
+    }
+</script>

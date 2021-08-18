@@ -11,12 +11,9 @@
 
 - frontend spielerei: https://www.w3schools.com/howto/howto_js_rangeslider.asp
     - range slider ( https://hackernoon.com/django-tutorial-creating-a-range-slider-filter-tt28359e)
-- user anlegen die default werden entsprechen
-- chat
-    - link in profil rein
-    -private chat komplett integrieren
 - nach register auf startseite bei neuladen bricht ab weil noch auf register link is
-
+- user query passt net ganz
+- user profil präferenz dazu packen
 
 
 
@@ -26,6 +23,7 @@
 
 
 iwann später
+- private chat komplett integrieren
 - datenbank
 - async problem mit privat-chat und 
     dem os.environ eintrag in settings.py lösen

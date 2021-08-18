@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+    @model HandleErrorInfo
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Error</title>
+</head>
+<body>
+    <hgroup>
+        <h1>Fehler</h1>
+        <h2>Bei der Ausführung der Aktion "@Model.ActionName" ist folgender Fehler aufgetreten:</h2>
+        <h2>@Model.Exception.Message</h2>
+
+        <h6>Fehlerdetails:</h6>
+        <h6>Fehlerdetails: @Model.Exception.StackTrace</h6>
+    </hgroup>
+    @Html.ActionLink("Back to List", "MainView")
+</body>
+</html>
