@@ -14,7 +14,7 @@
 - user anlegen die default werden entsprechen
 - chat
     - link in profil rein
-    - bei start noch eigene window gezeigt
+    -private chat komplett integrieren
 - nach register auf startseite bei neuladen bricht ab weil noch auf register link is
 
 

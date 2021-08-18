@@ -17,7 +17,7 @@
     <p>Total number of Fights: {{ profile.fight_record }}</p>
 
     <a href="#"><i class="fa fa-whatsapp"></i></a>
-    <a href="{% url 'dialogs' %}"> <button>Contact</button></a>
+    <a href="{% url 'dialogs_detail' profile.userprofile.username  %}"> <button>Contact</button></a>
 
   </div>
 
