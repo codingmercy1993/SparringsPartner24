@@ -24,6 +24,9 @@ def index(request):
 
     return render(request, 'SparringsPartner24/Index.html')
 
+def example(request):
+    return render(request, "SparringsPartner24/example.html")
+
 def register(request):
     if request.method == "GET":
         return render(
