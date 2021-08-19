@@ -1,0 +1,263 @@
+
+<!DOCTYPE html>
+
+<html lang="de" xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Betrugsprävention</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <!-- -------------------------------------------------------- das hier kopieren um den Pfad zu style.css bestimmen ----------------- -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+
+</head>
+<body>
+    <!-- Tableaubild - das brauchste nicht -->
+    <div class="container-fluid">
+        <img src="img/nav.png" />
+    </div>
+
+    <!-- der gesamte Content sollte in die divs "container-fluid" und "row" -->
+    <div class="container-fluid">
+        <!-- Überschrift -->
+        <h1 class="pt-5 pb-5">Feature Set Dashboard</h1>
+
+        <div class="row">
+            <!-- Wir haben sozusagen eine Breite von col-12 zur Verfügung (bootstrap). Ich benutze hier 2 für die Navigation und den Rest (also 10) für die Kacheln -->
+            <div class="col-2">
+                <!-- Navigation -->
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
+                    <!-- hier müsstest du über alle gespeicherten Feature Sets iterieren -->
+                    <a class="nav-link active" id="v-pills-feature-set-1-tab" data-toggle="pill" href="#v-pills-feature-set-1" role="tab">Feature Set 1</a>
+                    <a class="nav-link" id="v-pills-feature-set-2-tab" data-toggle="pill" href="#v-pills-feature-set-2" role="tab">Feature Set 2</a>
+                    <a class="nav-link" id="v-pills-feature-set-3-tab" data-toggle="pill" href="#v-pills-feature-set-3" role="tab">Feature Set 3</a>
+                    <a class="nav-link" id="v-pills-feature-set-4-tab" data-toggle="pill" href="#v-pills-feature-set-4" role="tab">Feature Set 4</a>
+                    <hr class="light-100 pb-3" />
+                    <!-- Hier der Button, um ein neues Feature Set zu erstellen. Buttons kannst du über den Namen triggern. Also einfach ein name = "neuesFeatureSet" o.ä. in das button-Tag einfügen.
+                         Dieser Name müsste dann sozusagen deine StringVariable für C# sein, mit der du deine Abfrage starten kannst. -->
+                    <button type="button" class="btn btn-outline-union">neu</button>
+                </div>
+            </div>
+            <div class="col-10">
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-feature-set-1" role="tabpanel"><h3 class="pb-3">Feature Set 1</h3></div>
+                    <div class="tab-pane fade" id="v-pills-feature-set-2" role="tabpanel"><h3 class="pb-3">Feature Set 2</h3></div>
+                    <div class="tab-pane fade" id="v-pills-feature-set-3" role="tabpanel"><h3 class="pb-3">Feature Set 3</h3></div>
+                    <div class="tab-pane fade" id="v-pills-feature-set-14" role="tabpanel"><h3 class="pb-3">Feature Set 4</h3></div>
+                </div>
+                <!-- die gesamten klickbaren Schaltflächen werden von dem grid-wrapper umgeben. -->
+                <div class="grid-wrapper">
+                    <!-- hier müsstest du über alle gespeicherten json-Einträge iterieren -->
+                    <div class="card-wrapper">
+                        <!-- die Checkbox sollte über name und value ausgelesen werden können. Glaube ich zumindest :D -->
+                        <input class="c-card" type="checkbox" id="1" value="1" checked="checked">
+                        <div class="card-content">
+                            <label for="1">
+                                <h4>WE / BKR</h4>
+                                <p class="small-meta dim">Erfassung</p>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- ab hier wiederholt sich alles. Kannste also löschen -->
+
+                    <div class="card-wrapper">
+                        <input class="c-card" type="checkbox" id="2" value="2" checked="checked">
+                        <div class="card-content">
+                            <div class="card-state-icon"></div>
+                            <label for="2">
+                                <div class="image"></div>
+                                <h4>Leistungsempfaenger</h4>
+                                <p class="small-meta dim">Erfassung</p>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <input class="c-card" type="checkbox" id="3" value="3">
+                        <div class="card-content">
+                            <div class="card-state-icon"></div>
+                            <label for="3">
+                                <div class="image"></div>
+                                <h4>Leistungsdatum</h4>
+                                <p class="small-meta dim">Erfassung</p>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <input class="c-card" type="checkbox" id="4" value="4" checked="checked">
+                        <div class="card-content">
+                            <label for="4">
+                                <h4>Belegdatum</h4>
+                                <p class="small-meta dim">Erfassung</p>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <input class="c-card" type="checkbox" id="5" value="5" checked="checked">
+                        <div class="card-content">
+                            <div class="card-state-icon"></div>
+                            <label for="5">
+                                <h4>Netto</h4>
+                                <p class="small-meta dim">Erfassung</p>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <input class="c-card" type="checkbox" id="6" value="6">
+                        <div class="card-content">
+                            <div class="card-state-icon"></div>
+                            <label for="6">
+                                <h4>Brutto</h4>
+                                <p class="small-meta dim">Erfassung</p>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <input class="c-card" type="checkbox" id="7" value="7" checked="checked">
+                        <div class="card-content">
+                            <label for="7">
+                                <h4>Währung</h4>
+                                <p class="small-meta dim">Erfassung</p>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <input class="c-card" type="checkbox" id="8" value="8" checked="checked">
+                        <div class="card-content">
+                            <div class="card-state-icon"></div>
+                            <label for="8">
+                                <h4>Arbeitsnachweis</h4>
+                                <p class="small-meta dim">Erfassung</p>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <input class="c-card" type="checkbox" id="9" value="9">
+                        <div class="card-content">
+                            <div class="card-state-icon"></div>
+                            <label for="9">
+                                <div class="image"></div>
+                                <h4>Freigabebetrag, netto</h4>
+                                <p class="small-meta dim">Allgemein</p>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <input class="c-card" type="checkbox" id="10" value="10" checked="checked">
+                        <div class="card-content">
+                            <label for="10">
+                                <h4>KreditorenNr</h4>
+                                <p class="small-meta dim">Allgemein</p>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <input class="c-card" type="checkbox" id="11" value="11" checked="checked">
+                        <div class="card-content">
+                            <div class="card-state-icon"></div>
+                            <label for="11">
+                                <div class="image"></div>
+                                <h4>Land</h4>
+                                <p class="small-meta dim">Allgemein</p>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <input class="c-card" type="checkbox" id="12" value="12">
+                        <div class="card-content">
+                            <div class="card-state-icon"></div>
+                            <label for="12">
+                                <h4>Belegart</h4>
+                                <p class="small-meta dim">Kontierung</p>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <input class="c-card" type="checkbox" id="13" value="13">
+                        <div class="card-content">
+                            <div class="card-state-icon"></div>
+                            <label for="13">
+                                <h4>Warengruppe</h4>
+                                <p class="small-meta dim">Kontierung</p>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <input class="c-card" type="checkbox" id="14" value="14">
+                        <div class="card-content">
+                            <div class="card-state-icon"></div>
+                            <label for="14">
+                                <h4>Baubuchauftrag</h4>
+                                <p class="small-meta dim">Kontierung</p>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <input class="c-card" type="checkbox" id="15" value="15">
+                        <div class="card-content">
+                            <div class="card-state-icon"></div>
+                            <label for="15">
+                                <h4>Freigabebetrag, netto</h4>
+                                <p class="small-meta dim">Kontierung</p>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <input class="c-card" type="checkbox" id="16" value="16">
+                        <div class="card-content">
+                            <div class="card-state-icon"></div>
+                            <label for="16">
+                                <h4>Brutto</h4>
+                                <p class="small-meta dim">Kontierung</p>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- löschen ENDE -->
+                </div>
+
+
+                <!-- dieses div padding muss ich nochmal ändern. -->
+                <div class="padding">
+                    <hr class="light-100" />
+                    <!-- hier findest du wieder Buttons. Diese solltest du, wie oben, über ihren Namen aktivieren können. Musst ihnen einfach einen eindeutigen Namen geben (siehe oben)
+                         und dann solltest du ihn mit C# über irgendeine if(isset)-Funktion triggern können -->
+                    <button type="button" class="btn btn-outline-union">speichern</button>
+                    <button type="button" class="btn btn-outline-union">umbenennen</button>
+                    <button type="button" class="btn btn-outline-union">löschen</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- hier binde ich noch Bootstrap ein. Da asp.net automatisch mit Bootstrap arbeitet, solltest du das nicht brauchen. -->
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

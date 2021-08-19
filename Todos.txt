@@ -11,9 +11,15 @@
 
 - frontend spielerei: https://www.w3schools.com/howto/howto_js_rangeslider.asp
     - range slider ( https://hackernoon.com/django-tutorial-creating-a-range-slider-filter-tt28359e)
+    - examples
+        - https://mkdev.me/en/posts/fundamentals-of-front-end-django
+        - https://simpleisbetterthancomplex.com/tutorial/2018/08/13/how-to-use-bootstrap-4-forms-with-django.html
+        - https://dev.to/sm0ke/django-templates-short-introduction-and-free-samples-2878
 - nach register auf startseite bei neuladen bricht ab weil noch auf register link is
 - user query passt net ganz
 - user profil präferenz dazu packen
+frontend
+
 
 
 

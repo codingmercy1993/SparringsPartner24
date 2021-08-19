@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3f9893f-f3ac-4b44-9fdf-466f6041455c" name="Default Changelist" comment="further integration of chat">
-      <change afterPath="$PROJECT_DIR$/djangoexample/SparringsPartner24/static/css/Site.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoexample/SparringsPartner24/static/css/bootstrap-grid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoexample/SparringsPartner24/static/css/bootstrap-old.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoexample/SparringsPartner24/static/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vorlagen/template.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Todos.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Todos.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoexample/SparringsPartner24/static/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/djangoexample/SparringsPartner24/static/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoexample/SparringsPartner24/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/djangoexample/SparringsPartner24/static/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/djangoexample/SparringsPartner24/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/djangoexample/SparringsPartner24/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vorlagen/MainView.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/vorlagen/MainView.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
