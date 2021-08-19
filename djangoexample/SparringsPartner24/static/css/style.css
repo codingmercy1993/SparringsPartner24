@@ -57,3 +57,460 @@
 .msg-unread {
   background-color: rgba(170, 204, 153, 0.3);
 }
+
+
+/*
+    -------------------------------------------------- PRIMÄRFARBEN --------------------------------------------------
+
+    ----------------------------------- BLAU -----------------------------------
+    UI-Blau 100: #ecf0f9
+    UI-Blau 200: #e0e9f3
+    UI-Blau 300: #c8d5e7
+    UI-Blau 400: #99abd0
+    UI-Blau 500: #466daf
+    UI-BLAU    : #00358e
+    UI-Blau 700: #132c64
+    UI-Blau 800: #051530
+
+    ----------------------------------- GRÜN -----------------------------------
+    UI-Grün 100: #b6dfaa
+    UI-Grün 200: #8ed082
+    UI-Grün 300: #6cc254
+    UI-GRÜN    : #43b02a
+    UI-Grün 500: #429332
+    UI-Grün 600: #316f24
+    UI-Grün 700: #215725
+    UI-Grün 800: #19411b
+
+    ----------------------------------- GRAU -----------------------------------
+    UI-Grau 100: #f6f6f6
+    UI-Grau 200: #e9e9e9
+    UI-Grau 300: #dadada
+    UI-GRau    : #c3c3c3
+    UI-Grau 500: #aeaeae
+    UI-Grau 600: #888888
+    UI-Grau 700: #6b6b6b
+    UI-Grau 800: #515151
+
+    ----------------------------------- AMPEL FARBEN -----------------------------------
+    UI-Grün : #43b02a
+    UI-Gelb : #fed210
+    UI-Rot  : #e42444
+
+*/
+body {
+    color: #00358e;
+}
+
+
+@media (min-width: 1440px) {
+    .container, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
+        max-width: 1380px;
+    }
+}
+
+@media (min-width: 1680px) {
+    .container, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl, .container-xxxl {
+        max-width: 1620px;
+    }
+}
+
+@media (min-width: 1900px) {
+    .container, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl, .container-xxxl, .container-xxxxl {
+        max-width: 1840px;
+    }
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #00358e;
+}
+
+.nav-pills a {
+    color: #00358e;
+}
+
+    .nav-pills a:hover {
+        color: #99abd0;
+    }
+
+/* ------------------------------------------------ list-group ------------------------------------------------ */
+.list-group-item.active {
+    z-index: 2;
+    color: #fff;
+    background-color: #00358e;
+    border-color: #00358e;
+}
+
+/* ------------------------------------------------ BUTTONS ------------------------------------------------ */
+.btn-outline-union {
+    color: #00358e;
+    border-color: #00358e;
+}
+
+.btn-outline-union:hover {
+color: #fff;
+background-color: #00358e;
+border-color: #00358e;
+}
+
+.btn-outline-union:focus, .btn-outline-union.focus {
+box-shadow: 0 0 0 0.2rem rgba(0, 53, 142, 0.5);
+}
+
+.btn-outline-union.disabled, .btn-outline-union:disabled {
+color: #00358e;
+background-color: transparent;
+}
+
+.btn-outline-union:not(:disabled):not(.disabled):active, .btn-outline-union:not(:disabled):not(.disabled).active,
+.show > .btn-outline-union.dropdown-toggle {
+color: #fff;
+background-color: #00358e;
+border-color: #00358e;
+}
+
+.btn-outline-union:not(:disabled):not(.disabled):active:focus, .btn-outline-union:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-union.dropdown-toggle:focus {
+box-shadow: 0 0 0 0.2rem rgba(67, 176, 42, 0.5);
+}
+/* ------------------------------------------------ BUTTON BLUE ------------------------------------------------ */
+/*
+    UI-Blau 500: #466daf
+    UI-BLAU    : #00358e
+    UI-Blau 700: #132c64
+    UI-Blau 800: #051530
+
+*/
+.btn-union {
+    color: #fff;
+    background-color: #00358e;
+    border-color: #00358e;
+}
+
+    .btn-union:hover {
+        color: #fff;
+        background-color: #051530;
+        border-color: #316f24;
+    }
+
+    .btn-union:focus, .btn-union.focus {
+        color: #fff;
+        background-color: #051530;
+        border-color: #316f24;
+        box-shadow: 0 0 0 0.2rem rgba(70, 109, 175, 0.5);
+    }
+
+    .btn-union.disabled, .btn-union:disabled {
+        color: #fff;
+        background-color: #00358e;
+        border-color: #00358e;
+    }
+
+    .btn-union:not(:disabled):not(.disabled):active, .btn-union:not(:disabled):not(.disabled).active,
+    .show > .btn-union.dropdown-toggle {
+        color: #fff;
+        background-color: #316f24;
+        border-color: #051530;
+    }
+
+        .btn-union:not(:disabled):not(.disabled):active:focus, .btn-union:not(:disabled):not(.disabled).active:focus,
+        .show > .btn-union.dropdown-toggle:focus {
+            box-shadow: 0 0 0 0.2rem rgba(70, 109, 175, 0.5);
+        }
+
+/* ------------------------------------------------ BUTTON GREEN ------------------------------------------------ */
+/*6cc254*/
+/*43b02a main color*/
+/*429332*/
+/*316f24*/
+/*215725*/
+.btn-union-confirm {
+    color: #fff;
+    background-color: #43b02a;
+    border-color: #43b02a;
+}
+
+    .btn-union-confirm:hover {
+        color: #fff;
+        background-color: #429332;
+        border-color: #316f24;
+    }
+
+    .btn-union-confirm:focus, .btn-union-confirm.focus {
+        color: #fff;
+        background-color: #429332;
+        border-color: #316f24;
+        box-shadow: 0 0 0 0.2rem rgba(108, 194, 84, 0.5);
+    }
+
+    .btn-union-confirm.disabled, .btn-union-confirm:disabled {
+        color: #fff;
+        background-color: #43b02a;
+        border-color: #43b02a;
+    }
+
+    .btn-union-confirm:not(:disabled):not(.disabled):active, .btn-union-confirm:not(:disabled):not(.disabled).active,
+    .show > .btn-union-confirm.dropdown-toggle {
+        color: #fff;
+        background-color: #316f24;
+        border-color: #215725;
+    }
+
+        .btn-union-confirm:not(:disabled):not(.disabled):active:focus, .btn-union-confirm:not(:disabled):not(.disabled).active:focus,
+        .show > .btn-union-confirm.dropdown-toggle:focus {
+            box-shadow: 0 0 0 0.2rem rgba(108, 91, 84, 0.5);
+        }
+
+
+/* ------------------------------------------------ BUTTON-OUTLINE Green like OK ------------------------------------------------ */
+.btn-outline-union-confirm {
+    color: #43b02a;
+    border-color: #43b02a;
+}
+
+    .btn-outline-union-confirm:hover {
+        color: #fff;
+        background-color: #43b02a;
+        border-color: #43b02a;
+    }
+
+    .btn-outline-union-confirm:focus, .btn-outline-union-confirm.focus {
+        box-shadow: 0 0 0 0.2rem rgba(67, 176, 42, 0.5);
+    }
+
+    .btn-outline-union-confirm.disabled, .btn-outline-union-confirm:disabled {
+        color: #43b02a;
+        background-color: transparent;
+    }
+
+    .btn-outline-union-confirm:not(:disabled):not(.disabled):active, .btn-outline-union-confirm:not(:disabled):not(.disabled).active,
+    .show > .btn-outline-union-confirm.dropdown-toggle {
+        color: #fff;
+        background-color: #43b02a;
+        border-color: #43b02a;
+    }
+
+        .btn-outline-union-confirm:not(:disabled):not(.disabled):active:focus, .btn-outline-union-confirm:not(:disabled):not(.disabled).active:focus,
+        .show > .btn-outline-union-confirm.dropdown-toggle:focus {
+            box-shadow: 0 0 0 0.2rem rgba(67, 176, 42, 0.5);
+        }
+/* ------------------------------------------------ BUTTONS RED ------------------------------------------------ */
+.btn-outline-union-red {
+    color: #e42444;
+    border-color: #e42444;
+}
+
+    .btn-outline-union-red:hover {
+        color: #fff;
+        background-color: #e42444;
+        border-color: #e42444;
+    }
+
+    .btn-outline-union-red:focus, .btn-outline-union-red.focus {
+        box-shadow: 0 0 0 0.2rem rgba(228, 36, 68, 0.5);
+    }
+
+    .btn-outline-union-red.disabled, .btn-outline-union-red:disabled {
+        color: #e42444;
+        background-color: transparent;
+    }
+
+    .btn-outline-union-red:not(:disabled):not(.disabled):active, .btn-outline-union-red:not(:disabled):not(.disabled).active,
+    .show > .btn-outline-union-red.dropdown-toggle {
+        color: #fff;
+        background-color: #e42444;
+        border-color: #e42444;
+    }
+
+        .btn-outline-union-red:not(:disabled):not(.disabled):active:focus, .btn-outline-union-red:not(:disabled):not(.disabled).active:focus,
+        .show > .btn-outline-union-red.dropdown-toggle:focus {
+            box-shadow: 0 0 0 0.2rem rgba(228, 36, 68, 0.5);
+        }
+
+.btn-sm-union {
+    padding: 0.15rem 0.3rem;
+    font-size: 0.7rem;
+    line-height: 0.8;
+    border-radius: 0.2rem;
+}
+/* ------------------------------------------------ BUTTONS ENDE ------------------------------------------------ */
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.small-meta {
+    font-size: 12px;
+}
+
+.dim {
+    opacity: 0.6;
+}
+
+.grid-wrapper {
+    margin: 0 auto;
+    width: 100%;
+    vertical-align: middle;
+    text-align: center;
+    position: relative;
+}
+
+.card-content {
+    border: 2px solid #CCC;
+    border-radius: 5px;
+    padding: 15px 15px 0px 15px;
+
+}
+
+.card-content * {
+    cursor: pointer;
+}
+
+.card-wrapper {
+    position: relative;
+    height: 100px;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.c-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.c-card ~ .card-content {
+    transition: all 200ms ease-out;
+    color: #888;
+}
+
+
+.c-card ~ .card-content:hover {
+    border: 2px solid #b6dfaa;
+    transform: scale(1.02);
+}
+.c-card:checked ~ .card-content {
+    border: 1px solid #429332;
+    background-color: #43b02a;
+    color: #fff;
+    box-shadow: 1px 3px 2px #ccc;
+}
+
+/**/
+
+.card-content-disabled {
+    border: 2px solid #CCC;
+    border-radius: 5px;
+    padding: 15px 15px 0px 15px;
+}
+
+.card-content-disabled * {
+    cursor: default;
+}
+
+.in-processing-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.in-processing-card ~ .card-content-disabled {
+    color: #bbb;
+    background-color: #f2f2ea;
+}
+
+.in-processing-card:checked ~ .card-content-disabled {
+    border: 2px solid #c5bd64;
+    background-color: #d0ca82;
+    color: #fff;
+    box-shadow: 1px 3px 2px #ccc;
+}
+
+.processed-succesfully-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.processed-succesfully-card ~ .card-content-disabled {
+    color: #bbb;
+    background-color: #eaf2ea;
+}
+
+.processed-succesfully-card:checked ~ .card-content-disabled {
+    border: 2px solid #6cc254;
+    background-color: #8ed082;
+    color: #fff;
+    box-shadow: 1px 3px 2px #ccc;
+}
+.processing-failed-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.processing-failed-card ~ .card-content-disabled {
+    color: #bbb;
+    background-color: #f2eaea;
+}
+
+.processing-failed-card:checked ~ .card-content-disabled {
+    border: 2px solid #c26454;
+    background-color: #d08f82;
+    color: #fff;
+    box-shadow: 1px 3px 2px #ccc;
+}
+
+
+
+.b-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.b-card ~ .card-content {
+    color: black;
+}
+
+.b-card:disabled ~ .card-content {
+    color: black;
+}
+
+.b-card ~ .card-content:hover {
+    border: 2px solid #b6dfaa;
+}
+
+.b-card:checked ~ .card-content {
+    border: 1px solid #888;
+    background-color: #b6dfaa;
+    color: black;
+    box-shadow: 1px 3px 2px #ccc;
+}
+
+
+hr.light-100 {
+    border-top: 1px solid #d5d5d5;
+    width: 100%;
+}
+
+.padding {
+    padding-top: 300px;
+}

@@ -1,5 +1,5 @@
 - https://www.djangoproject.com/start/
-- python manage.py runserver 0:8000
+- python manage.py runserver localhost:8000
 - python manage.py shell
 - python manage.py makemigrations SparringsPartner24
 - python manage.py migrate

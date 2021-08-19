@@ -1,11 +1,4 @@
-﻿@model UI.UMH.Betrugspraevention.Web.ViewModels.FeatureSetViewModel
-@{ ViewBag.Title = "Betrugsprävention"; }
-@using UI.UMH.Betrugspraevention.Web.Data;
-@using UI.UMH.Betrugspraevention.Web.Models;
-@using UI.UMH.Betrugspraevention.Web.Extensions;
-@{ var data = ViewBag.Message;}
-
-<head>
+﻿<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Bootstrap CSS -->
@@ -18,26 +11,13 @@
         <hr class="light-100" />
         <div class="col-md-3 col-lg-2 pb-3">
             <div class="list-group" id="list-tab" role="tablist">
-                @{int listItemCounter = 1;}
-                @foreach (var featureSetItem in Model.FeatureSets)
-                {
-                    <a class="list-group-item list-group-item-action @(featureSetItem.FeatureSetId == (int)TempData["featureSetId"]  ? "active" : string.Empty)" id="list-@featureSetItem.FeatureSetId-list" onclick="getMainView(@featureSetItem.FeatureSetId)" data-toggle="list" href="#list-@featureSetItem.FeatureSetId" role="tab" aria-controls="@featureSetItem.FeatureSetId">@featureSetItem.FeatureSetName</a>
-                    listItemCounter++;
-                }
-                <hr class="light-100" />
+                                <hr class="light-100" />
                 <button type="button" class="btn btn-outline-union" onclick="getNeu()">Neues Feature Set</button>
             </div>
         </div>
         <div class="col-md-9 col-lg-10">
             <div class="tab-content" id="nav-tabContent">
-                @{int checkBoxCounter = 1;}
-
-                @foreach (var featureSetItem in Model.FeatureSets)
-                {
                     <div class="tab-pane fade @(featureSetItem.FeatureSetId == (int)TempData["featureSetId"]  ? "show active" : string.Empty)" id="list-@featureSetItem.FeatureSetId" role="tabpanel" aria-labelledby="list-@featureSetItem.FeatureSetId-list">
-                        @if (ViewBag.Flag)
-                        {
-
                             <div class="container row off">
                                 <h3>@featureSetItem.FeatureSetName</h3>
                                 <div>
@@ -53,11 +33,7 @@
                             List<UI.UMH.Betrugspraevention.Web.Models.FeatureSet> selectedFeatureSet = Model.FeatureSets.Where(x => x.FeatureSetId == featureSetItem.FeatureSetId).ToList();
                             using (Ajax.BeginForm("RenameConfirmed", new AjaxOptions() { HttpMethod = "Post", UpdateTargetId = "mainclass" }))
                             {
-                                @Html.AntiForgeryToken()
                                 <div class="container row off">
-                                    <h3>@Html.EditorFor(selectedFeatureSetList => selectedFeatureSet[0].FeatureSetName, new { htmlAttributes = new { @class = "form-control" } })</h3>
-                                    @Html.HiddenFor(selectedFeatureSetlList => selectedFeatureSet[0].CreationDate)
-                                    @Html.HiddenFor(selectedFeatureSetList => selectedFeatureSet[0].FeatureSetId)
                                     <div>
                                         <input type="submit" value="Speichern" class="btn btn-outline-dark" />
                                     </div>
