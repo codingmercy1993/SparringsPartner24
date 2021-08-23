@@ -20,7 +20,7 @@ class UserProfileChangeForm(UserChangeForm):
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        fields = '__all__'
+        fields = ('username', 'email', 'phone_number', 'first_name', 'last_name')
 
 class FighterProfileForm(forms.ModelForm):
     class Meta:

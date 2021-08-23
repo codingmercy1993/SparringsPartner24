@@ -4,7 +4,11 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+
+{% load crispy_forms_tags %}
+
 <div class="card">
+  
     <h1>Fighter Profile of - {{ profile.userprofile.username }}</h1>
     <p>Description: {{ profile.description }}</p>
     <p>Weight: {{ profile.weight }}</p>

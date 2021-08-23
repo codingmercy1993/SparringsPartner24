@@ -42,6 +42,7 @@ os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true"
 INSTALLED_APPS = [
     'SparringsPartner24.apps.Sparringspartner24Config',
     'django_private_chat',
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -50,6 +51,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 AUTH_USER_MODEL = 'SparringsPartner24.UserProfile'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'#'uni_form'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

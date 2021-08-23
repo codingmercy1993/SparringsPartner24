@@ -57,14 +57,14 @@
                 <!--navigation link--><a class="nav__link" href="{% url 'SparringsPartner24:edit_search_profile' %}" title="Search Engine"><i class="nav__link-icon material-icons"></i>Edit Preference Profile</a>
               </li>
                     {% endif %}
-              <li class="demo-btn">
-                <!--navigation link--><a class="nav__link" href="{% url 'logout' %}" title="Logout"><i class="nav__link-icon material-icons"></i>Logout</a>
-              </li>
-              <li class="demo-btn">
+              <li class="demo-btn js-active">
                 <!--navigation link--><a class="nav__link" href="{% url 'dialogs' %}" title="Chats"><i class="nav__link-icon material-icons"></i>Chats</a>
               </li>
               <li class="demo-btn">
                 <!--navigation link--><a class="nav__link" href="{% url 'password_change' %}" title="Change password"><i class="nav__link-icon material-icons"></i>Change password</a>
+              </li>
+              <li class="demo-btn">
+                <!--navigation link--><a class="nav__link" href="{% url 'logout' %}" title="Logout"><i class="nav__link-icon material-icons"></i>Logout</a>
               </li>
                 {% else %}
                 <li class="demo-btn">

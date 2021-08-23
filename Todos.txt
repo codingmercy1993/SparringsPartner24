@@ -17,10 +17,13 @@
         - https://dev.to/sm0ke/django-templates-short-introduction-and-free-samples-2878
         https://dev.to/code_mystery/sidebar-menu-using-html-and-css-o49
 - js von chat beißt sich mit side bar
-- crispy forms für forms nutzen
+- https://www.bootdey.com/snippets/view/bs4-seller-cards
+- crispy forms für fehlende views
+- in base.html funzt login/logout mit auth nur wenn über index aufgerufen
 - nach register auf startseite bei neuladen bricht ab weil noch auf register link is
 - user query passt net ganz
 - user profil präferenz dazu packen
+- user profil pw ändern dazu
 
 
 
