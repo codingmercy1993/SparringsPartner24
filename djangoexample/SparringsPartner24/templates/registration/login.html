@@ -3,13 +3,14 @@
 {% block content %}
 <h2>Login</h2>
 
-<form method="post">
+{% load crispy_forms_tags %}
+
+<form method="post" class="uniForm">
     {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Login">
+    {{ form|crispy }}
+    <button href="{% url 'login' %}" title="Logout" class="btn btn-primary">Login</button>
 </form>
 
-<a href="{% url 'SparringsPartner24:index' %}">Back to dashboard</a>
-<a href="{% url 'password_reset' %}">Reset password</a>
-<a href="{% url 'SparringsPartner24:register' %}">Register</a>
+<a class="btn btn-primary" href="{% url 'password_reset' %}">Reset password</a>
+<a class="btn btn-primary" href="{% url 'SparringsPartner24:register' %}">Register</a>
 {% endblock %}

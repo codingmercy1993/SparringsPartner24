@@ -24,6 +24,6 @@
     <a href="{% url 'dialogs_detail' profile.userprofile.username  %}"> <button>Contact</button></a>
 
   </div>
-
-  <a href="{{ request.META.HTTP_REFERER }}">Zurück</a>
+  
+  <a class="btn btn-primary" href="{{ request.META.HTTP_REFERER }}" >Back</a>
 {% endblock %}

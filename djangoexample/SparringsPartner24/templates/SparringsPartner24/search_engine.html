@@ -4,12 +4,14 @@
 
 <h2>Search Engine</h2>
 
-<form method="post">
+{% load crispy_forms_tags %}
+
+<form method="post" class="uniForm">
     {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit">
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-primary">Suchen</button>
 </form>
 
-<a href="{% url 'SparringsPartner24:index' %}">Zurück</a>
+<a class="btn btn-primary" href="{% url 'SparringsPartner24:index' %}">Back</a>
 
 {% endblock %}

@@ -9,6 +9,7 @@
     {% csrf_token %}
     {{ form|crispy }}
     <button type="submit" class="btn btn-primary">Save</button>
-    <button href="{% url 'SparringsPartner24:index' %}" title="Logout" class="btn btn-primary">Back</button>
 </form>
+
+<a class="btn btn-primary" href="{% url 'SparringsPartner24:index' %}" >Back</a>
 {% endblock %}
