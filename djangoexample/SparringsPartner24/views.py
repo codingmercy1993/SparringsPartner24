@@ -24,9 +24,6 @@ def index(request):
 
     return render(request, 'SparringsPartner24/Index.html')
 
-def example(request):
-    return render(request, "SparringsPartner24/example.html")
-
 def register(request):
     if request.method == "GET":
         return render(
@@ -151,4 +148,4 @@ def edit_search_profile(request):
 @login_required
 def get_all_fighters(request):
     result_list = UserProfile.objects.all()
-    return render(request, 'SparringsPartner24/show_all_fighters.html', {'result_list': result_list})
+    return render(request, 'SparringsPartner24/fighter_list.html', {'result_list': result_list})
