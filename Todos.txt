@@ -9,22 +9,18 @@
 - /usr/local/bin/python3.9
 
 
-- frontend spielerei: https://www.w3schools.com/howto/howto_js_rangeslider.asp
-    - range slider ( https://hackernoon.com/django-tutorial-creating-a-range-slider-filter-tt28359e)
-    - examples
-        - https://mkdev.me/en/posts/fundamentals-of-front-end-django
-        - https://simpleisbetterthancomplex.com/tutorial/2018/08/13/how-to-use-bootstrap-4-forms-with-django.html
-        - https://dev.to/sm0ke/django-templates-short-introduction-and-free-samples-2878
-        https://dev.to/code_mystery/sidebar-menu-using-html-and-css-o49
-- js private chat funzt net (jquery denke)
-- https://www.bootdey.com/snippets/view/bs4-seller-cards
-- crispy forms für fehlende views
+- frontend spielerei:
+    - range slider ( https://hackernoon.com/django-tutorial-creating-a-range-slider-filter-tt28359e,   https://www.w3schools.com/howto/howto_js_rangeslider.asp)
+    - https://www.bootdey.com/snippets/view/bs4-seller-cards (profil selber)
+    - https://www.bootdey.com/snippets/view/User-list-cards (übersicht)
+
 - in base.html funzt login/logout mit auth nur wenn über index aufgerufen
+    -> auf index seite nur die roten buttons hinterlegen
 - nach register auf startseite bei neuladen bricht ab weil noch auf register link is
 - user query passt net ganz
 - user profil präferenz dazu packen
 - user profil pw ändern dazu
-
+- gender in fighter profile
 
 
 
@@ -39,6 +35,7 @@ iwann später
 - datenbank
 - async problem mit privat-chat und 
     dem os.environ eintrag in settings.py lösen
+- layout: so richtig schnön (https://dev.to/sm0ke/django-templates-short-introduction-and-free-samples-2878)
 
 
 
