@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3f9893f-f3ac-4b44-9fdf-466f6041455c" name="Default Changelist" comment="fixing chat scheiße">
-      <change afterPath="$PROJECT_DIR$/djangoexample/SparringsPartner24/templates/SparringsPartner24/fighter_profile_new.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Todos.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Todos.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoexample/SparringsPartner24/templates/SparringsPartner24/Index.html" beforeDir="false" afterPath="$PROJECT_DIR$/djangoexample/SparringsPartner24/templates/SparringsPartner24/Index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoexample/SparringsPartner24/templates/SparringsPartner24/fighter_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/djangoexample/SparringsPartner24/templates/SparringsPartner24/fighter_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoexample/SparringsPartner24/templates/SparringsPartner24/search_engine_result.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoexample/SparringsPartner24/templates/SparringsPartner24/show_all_fighters.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoexample/SparringsPartner24/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/djangoexample/SparringsPartner24/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoexample/SparringsPartner24/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoexample/SparringsPartner24/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/djangoexample/SparringsPartner24/templates/SparringsPartner24/fighter_profile_new.html" beforeDir="false" afterPath="$PROJECT_DIR$/djangoexample/SparringsPartner24/templates/SparringsPartner24/fighter_profile_new.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/djangoexample/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/djangoexample/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
