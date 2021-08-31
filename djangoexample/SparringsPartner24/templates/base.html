@@ -35,29 +35,14 @@
               <li class="demo-btn">
                 <!--navigation link--><a class="nav__link" href="{% url 'SparringsPartner24:edit_user_profile' %}" title="Search Engine"><i class="nav__link-icon material-icons"></i>Edit User Profile</a>
               </li>
-                    {% if not has_fighterprofile %}
-              <!--navigation item-->
-              <li class="btn btn-danger">
-                <!--navigation link--><a class="nav__link" href="{% url 'SparringsPartner24:edit_fighter_profile' %}" title="Search Engine"><i class="nav__link-icon material-icons"></i>Create Fighter Profile</a>
-              </li>
-                    {% else %}
               <!--navigation item-->
               <li class="demo-btn">
                 <!--navigation link--><a class="nav__link" href="{% url 'SparringsPartner24:edit_fighter_profile' %}" title="Search Engine"><i class="nav__link-icon material-icons"></i>Edit Fighter Profile</a>
               </li>
-                    {% endif %}
-              <!--navigation item-->
-                    {% if not has_fighterprofile %}
-              <!--navigation item-->
-              <li class="btn btn-danger">
-                <!--navigation link--><a class="nav__link" href="{% url 'SparringsPartner24:edit_search_profile' %}" title="Search Engine"><i class="nav__link-icon material-icons"></i>Create Preference Profile</a>
-              </li>
-                    {% else %}
               <!--navigation item-->
               <li class="demo-btn">
                 <!--navigation link--><a class="nav__link" href="{% url 'SparringsPartner24:edit_search_profile' %}" title="Search Engine"><i class="nav__link-icon material-icons"></i>Edit Preference Profile</a>
               </li>
-                    {% endif %}
               <li class="demo-btn js-active">
                 <!--navigation link--><a class="nav__link" href="{% url 'dialogs' %}" title="Chats"><i class="nav__link-icon material-icons"></i>Chats</a>
               </li>

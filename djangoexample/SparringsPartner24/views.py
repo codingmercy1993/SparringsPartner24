@@ -41,7 +41,7 @@ def register(request):
 def fighter_profile(request, userprofile_id):
     result = FighterProfile.objects.select_related("userprofile").get(pk=userprofile_id)
 
-    return render(request, 'SparringsPartner24/fighter_profile.html', {'profile': result})
+    return render(request, 'SparringsPartner24/fighter_profile_new.html', {'profile': result})
 
 @login_required
 def search_engine(request):
@@ -85,7 +85,7 @@ def search_engine(request):
             print(filters)
             result_list = FighterProfile.objects.filter(**filters)
             print(result_list)
-            return render(request, 'SparringsPartner24/search_engine_result.html', {'result_list': result_list})
+            return render(request, 'SparringsPartner24/fighter_list.html', {'result_list': result_list})
     else:
         form = SearchEngineForm()
         
@@ -147,5 +147,7 @@ def edit_search_profile(request):
 
 @login_required
 def get_all_fighters(request):
-    result_list = UserProfile.objects.all()
+    result_list = FighterProfile.objects.select_related("userprofile").all()
+
+
     return render(request, 'SparringsPartner24/fighter_list.html', {'result_list': result_list})

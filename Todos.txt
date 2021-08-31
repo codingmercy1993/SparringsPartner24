@@ -12,16 +12,13 @@
 - frontend spielerei:
     - range slider ( https://hackernoon.com/django-tutorial-creating-a-range-slider-filter-tt28359e,   https://www.w3schools.com/howto/howto_js_rangeslider.asp)
     - https://www.bootdey.com/snippets/view/bs4-seller-cards (profil selber)
-    - https://www.bootdey.com/snippets/view/User-list-cards (übersicht)
 
-- in base.html funzt login/logout mit auth nur wenn über index aufgerufen
-    -> auf index seite nur die roten buttons hinterlegen
 - nach register auf startseite bei neuladen bricht ab weil noch auf register link is
 - user query passt net ganz
 - user profil präferenz dazu packen
 - user profil pw ändern dazu
 - gender in fighter profile
-
+- Db umstellen auf one to one
 
 
 
