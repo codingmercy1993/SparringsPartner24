@@ -12,7 +12,7 @@
 - frontend spielerei:
     - range slider ( https://hackernoon.com/django-tutorial-creating-a-range-slider-filter-tt28359e,   https://www.w3schools.com/howto/howto_js_rangeslider.asp)
     - https://www.bootdey.com/snippets/view/bs4-seller-cards (profil selber)
-
+- create usw auf index nur wenn authenicated is
 - nach register auf startseite bei neuladen bricht ab weil noch auf register link is
 - user query passt net ganz
 - user profil präferenz dazu packen
