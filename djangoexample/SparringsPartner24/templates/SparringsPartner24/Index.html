@@ -6,20 +6,21 @@ Hello, {{ user.username|default:'Guest' }}!
 <p> Was geht ^^ </p>
 <p> Bist grad auf Art App wo man andere leute zum bügeln finden kann so </p>
 
-
+{% if user.is_authenticated %}
     {% if not has_fighterprofile %}
     <p> hier ey haste nicht was vergessen??? leg dir mal n korrektes fighter profile an </p>
-<!--navigation item-->
-<li class="btn btn-danger">
-<!--navigation link--><a class="nav__link" href="{% url 'SparringsPartner24:edit_fighter_profile' %}" title="Search Engine"><i class="nav__link-icon material-icons"></i>Create Fighter Profile</a>
-</li>
-{% endif %}
+    <!--navigation item-->
+    <li class="btn btn-danger">
+    <!--navigation link--><a class="nav__link" href="{% url 'SparringsPartner24:edit_fighter_profile' %}" title="Search Engine"><i class="nav__link-icon material-icons"></i>Create Fighter Profile</a>
+    </li>
+    {% endif %}
     {% if not has_fighterprofile %}
     <p> ey samma !!! Leg dir mal n preference profil an damit die leute checken worauf du bock hast so </p>
-<!--navigation item-->
-<li class="btn btn-danger">
-<!--navigation link--><a class="nav__link" href="{% url 'SparringsPartner24:edit_search_profile' %}" title="Search Engine"><i class="nav__link-icon material-icons"></i>Create Preference Profile</a>
-</li>
+    <!--navigation item-->
+    <li class="btn btn-danger">
+    <!--navigation link--><a class="nav__link" href="{% url 'SparringsPartner24:edit_search_profile' %}" title="Search Engine"><i class="nav__link-icon material-icons"></i>Create Preference Profile</a>
+    </li>
     {% endif %}
+{% endif %}
 {% endblock %}
 

@@ -40,8 +40,9 @@ def register(request):
 @login_required
 def fighter_profile(request, userprofile_id):
     result = FighterProfile.objects.select_related("userprofile").get(pk=userprofile_id)
+    search_profile = SearchProfile.objects.get(pk=userprofile_id)
 
-    return render(request, 'SparringsPartner24/fighter_profile_new.html', {'profile': result})
+    return render(request, 'SparringsPartner24/fighter_profile_new.html', {'profile': result, 'searchprofile': search_profile})
 
 @login_required
 def search_engine(request):
@@ -83,6 +84,7 @@ def search_engine(request):
                         filters['martial_art__icontains'] = value
 
             print(filters)
+            filters = {'martial_art__icontains': 'boxen', 'weight__lte': '100', 'weight__gte': '0'}
             result_list = FighterProfile.objects.filter(**filters)
             print(result_list)
             return render(request, 'SparringsPartner24/fighter_list.html', {'result_list': result_list})

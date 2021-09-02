@@ -10,15 +10,12 @@
 
 
 - frontend spielerei:
-    - range slider ( https://hackernoon.com/django-tutorial-creating-a-range-slider-filter-tt28359e,   https://www.w3schools.com/howto/howto_js_rangeslider.asp)
-    - https://www.bootdey.com/snippets/view/bs4-seller-cards (profil selber)
-- create usw auf index nur wenn authenicated is
-- nach register auf startseite bei neuladen bricht ab weil noch auf register link is
+    - range slider ( https://hackernoon.com/django-tutorial-creating-a-range-slider-filter-tt28359e,   https://www.w3schools.com/howto/howto_js_rangeslider.asp) (in search und profiles)
 - user query passt net ganz
-- user profil präferenz dazu packen
-- user profil pw ändern dazu
-- gender in fighter profile
-- Db umstellen auf one to one
+- nach register auf startseite bei neuladen bricht ab weil noch auf register link is
+- gender in views
+- werbung integrieren
+- deployen
 
 
 
@@ -28,6 +25,7 @@
 
 
 iwann später
+- pic hochladen können
 - private chat komplett integrieren
 - datenbank
 - async problem mit privat-chat und 
