@@ -10,13 +10,16 @@
 
 
 - frontend spielerei:
-    - range slider ( https://hackernoon.com/django-tutorial-creating-a-range-slider-filter-tt28359e,   https://www.w3schools.com/howto/howto_js_rangeslider.asp) (in search und profiles)
+    - range slider (nochmal views anpassen mit ids übergbeen usw) (in search und profiles)
 - user query passt net ganz
 - nach register auf startseite bei neuladen bricht ab weil noch auf register link is
 - gender in views
 - werbung integrieren
 - deployen
-
+- fighterprofile    
+    - dropdown für martial art
+    - birthday errechnen (age field berechnen)
+    - distance berechnen 
 
 
 

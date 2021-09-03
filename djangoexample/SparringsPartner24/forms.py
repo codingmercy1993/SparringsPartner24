@@ -25,7 +25,7 @@ class UserProfileForm(forms.ModelForm):
 class FighterProfileForm(forms.ModelForm):
     class Meta:
         model = FighterProfile
-        exclude = ['userprofile', 'experience_years']
+        exclude = ['userprofile']
 
 class SearchProfileForm(forms.ModelForm):
     class Meta:
@@ -47,7 +47,8 @@ class SearchEngineForm(forms.Form):
     min_fights = forms.IntegerField(required=False, initial = 0)
 
     max_experience_years = forms.IntegerField(required = False, initial = 50)
-    min_experience_years = forms.IntegerField(required = False, initial = 0)
+    #min_experience_years = forms.IntegerField(required = False, initial = 0)
+    min_experience_years = forms.IntegerField(widget=forms.NumberInput(attrs={'type':'range', 'step': '2'})) 
 
 
 

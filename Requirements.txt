@@ -1,4 +1,5 @@
 django-private-chat
 django
 django-crispy-forms
+django-filter
 #django-channels
