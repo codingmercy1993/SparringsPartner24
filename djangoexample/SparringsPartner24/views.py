@@ -53,7 +53,7 @@ def search_engine(request):
             filters = {}
             for key, value in request.POST.items():
                 print(key, value)
-                if value != '':
+                if value:
 
                     if key == 'max_weight':
                         filters['weight__lte'] = value
@@ -83,8 +83,6 @@ def search_engine(request):
                     elif key == 'martial_art':
                         filters['martial_art__icontains'] = value
 
-            print(filters)
-            filters = {'martial_art__icontains': 'boxen', 'weight__lte': '100', 'weight__gte': '0'}
             result_list = FighterProfile.objects.filter(**filters)
             print(result_list)
             return render(request, 'SparringsPartner24/fighter_list.html', {'result_list': result_list})
