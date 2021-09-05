@@ -61,6 +61,22 @@
                       {{ profile.weight }} kg
                     </div>
                   </div>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Gym</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{ profile.gym }} 
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Trainer</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{ profile.trainer }} 
+                    </div>
+                  </div>
               </div>
                     <hr>
                      <div class="row gutters-sm">
@@ -70,15 +86,7 @@
                       <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">Fighter stats - {{ profile.martial_art }} </h6>
                       <small>Experience years: {{ profile.experience_years }}  </small>
                       <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Gym: {{ profile.gym }}  </small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Trainer: {{ profile.trainer }} </small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 89%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" value="1" aria-valuemin="0" max="50"></div>
                       </div>
                       <small>Fight Record: {{ profile.fight_record }} </small>
                       <div class="progress mb-3" style="height: 5px">
@@ -137,4 +145,81 @@
 	</div>
 </div>
 
+{% endblock %}
+
+{% block extra_js %}
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript">
+    $( function() {
+     var min_age =   document.getElementById('min_age').value
+     var max_age =   document.getElementById('max_age').value
+      $( "#slider-range-age" ).slider({
+        range: true,
+        min: 16,
+        max: 100,
+        values: [ min_age, max_age ],
+        slide: function( event, ui ) {
+          $( "#min_age" ).val( ui.values[ 0 ]) + $( "#max_age" ).val( ui.values[ 1 ]) ;
+        }
+      }); 
+    } );
+
+    $( function() {
+     var min_weight =   document.getElementById('min_weight').value
+     var max_weight =   document.getElementById('max_weight').value
+      $( "#slider-range-weight" ).slider({
+        range: true,
+        min: 0,
+        max: 100,
+        values: [ min_weight, max_weight ],
+        slide: function( event, ui ) {
+          $( "#min_weight" ).val( ui.values[ 0 ]) + $( "#max_weight" ).val( ui.values[ 1 ]) ;
+        }
+      }); 
+    } );
+
+    $( function() {
+     var min_fights =   document.getElementById('min_fights').value
+     var max_fights =   document.getElementById('max_fights').value
+      $( "#slider-range-fights" ).slider({
+        range: true,
+        min: 0,
+        max: 300,
+        values: [ min_fights, max_fights ],
+        slide: function( event, ui ) {
+          $( "#min_fights" ).val( ui.values[ 0 ]) + $( "#max_fights" ).val( ui.values[ 1 ]) ;
+        }
+      }); 
+    } );
+
+    $( function() {
+     var min_experience_years =   document.getElementById('min_experience_years').value
+     var max_experience_years =   document.getElementById('max_experience_years').value
+      $( "#slider-range-experience" ).slider({
+        range: true,
+        min: 0,
+        max: 50,
+        values: [ min_experience_years, max_experience_years ],
+        slide: function( event, ui ) {
+          $( "#min_experience_years" ).val( ui.values[ 0 ]) + $( "#max_experience_years" ).val( ui.values[ 1 ]) ;
+        }
+      }); 
+    } );
+
+    $( function() {
+     var min_distance =   document.getElementById('min_distance').value
+     var max_distance =   document.getElementById('max_distance').value
+      $( "#slider-range-distance" ).slider({
+        range: true,
+        min: 0,
+        max: 2000,
+        values: [ min_distance, max_distance ],
+        slide: function( event, ui ) {
+          $( "#min_distance" ).val( ui.values[ 0 ]) + $( "#max_distance" ).val( ui.values[ 1 ]) ;
+        }
+      }); 
+    } );
+    </script>
 {% endblock %}

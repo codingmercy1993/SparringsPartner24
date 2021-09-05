@@ -25,6 +25,10 @@ class FighterProfile(models.Model):
     trainer = models.CharField(max_length=200, blank=True, null=True)
     fight_record = models.IntegerField(blank=True, null=True)
 
+    @property
+    def age(self):
+        return int((datetime.now().date() - self.birthday).days / 365.25)
+
 
 class SearchProfile(models.Model):
     userprofile = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
