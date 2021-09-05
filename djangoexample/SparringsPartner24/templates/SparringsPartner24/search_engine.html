@@ -8,12 +8,29 @@
 
 <form method="post" class="uniForm">
     {% csrf_token %}
-    {{ form|crispy }}
-    MIN ja: <input type="text" id="minja" name="minja" value=76 />
-    MAX ja: <input type="text" id="maxja" name="maxja" />
-    
+    {{ form.martial_art|as_crispy_field }}
+
+    Distanz [in Km] <input type="text" id="min_distance" name="min_distance" value=0 />
+    - <input type="text" id="max_distance" name="max_distance" value = 2000 />
+    <div id="slider-range-distance"></div>
+
+    Gewicht <input type="text" id="min_weight" name="min_weight" value=0 />
+    - <input type="text" id="max_weight" name="max_weight" value = 150 />
+    <div id="slider-range-weight"></div>
+
+    Anzahl Kämpfe <input type="text" id="min_fights" name="min_fights" value=0 />
+    - <input type="text" id="max_fights" name="max_fights" value = 300 />
+    <div id="slider-range-fights"></div>
+  
+    Alter <input type="text" id="min_age" name="min_age" value=16 />
+    - <input type="text" id="max_age" name="max_age" value = 99 />
+    <div id="slider-range-age"></div>
+
+    Jahre Kampfsporterfahrung <input type="text" id="min_experience_years" name="min_experience_years" value=0 />
+    - <input type="text" id="max_experience_years" name="max_experience_years" value = 99 />
+    <div id="slider-range-experience"></div>
     <button type="submit" class="btn btn-primary">Suchen</button>
-    <div id="slider-range"></div>
+    
 </form>
 
 <a class="btn btn-primary" href="{% url 'SparringsPartner24:index' %}">Back</a>
@@ -26,18 +43,74 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript">
-    var a = ""
     $( function() {
-     var val =   document.getElementById('minja').value
-      $( "#slider-range" ).slider({
+     var min_age =   document.getElementById('min_age').value
+     var max_age =   document.getElementById('max_age').value
+      $( "#slider-range-age" ).slider({
+        range: true,
+        min: 16,
+        max: 100,
+        values: [ min_age, max_age ],
+        slide: function( event, ui ) {
+          $( "#min_age" ).val( ui.values[ 0 ]) + $( "#max_age" ).val( ui.values[ 1 ]) ;
+        }
+      }); 
+    } );
+
+    $( function() {
+     var min_weight =   document.getElementById('min_weight').value
+     var max_weight =   document.getElementById('max_weight').value
+      $( "#slider-range-weight" ).slider({
         range: true,
         min: 0,
-        max: 500,
-        values: [ val, 300 ],
+        max: 100,
+        values: [ min_weight, max_weight ],
         slide: function( event, ui ) {
-          $( "#minja" ).val( ui.values[ 0 ]) + $( "#maxja" ).val( ui.values[ 1 ]) ;
+          $( "#min_weight" ).val( ui.values[ 0 ]) + $( "#max_weight" ).val( ui.values[ 1 ]) ;
         }
-      });
+      }); 
+    } );
+
+    $( function() {
+     var min_fights =   document.getElementById('min_fights').value
+     var max_fights =   document.getElementById('max_fights').value
+      $( "#slider-range-fights" ).slider({
+        range: true,
+        min: 0,
+        max: 300,
+        values: [ min_fights, max_fights ],
+        slide: function( event, ui ) {
+          $( "#min_fights" ).val( ui.values[ 0 ]) + $( "#max_fights" ).val( ui.values[ 1 ]) ;
+        }
+      }); 
+    } );
+
+    $( function() {
+     var min_experience_years =   document.getElementById('min_experience_years').value
+     var max_experience_years =   document.getElementById('max_experience_years').value
+      $( "#slider-range-experience" ).slider({
+        range: true,
+        min: 0,
+        max: 50,
+        values: [ min_experience_years, max_experience_years ],
+        slide: function( event, ui ) {
+          $( "#min_experience_years" ).val( ui.values[ 0 ]) + $( "#max_experience_years" ).val( ui.values[ 1 ]) ;
+        }
+      }); 
+    } );
+
+    $( function() {
+     var min_distance =   document.getElementById('min_distance').value
+     var max_distance =   document.getElementById('max_distance').value
+      $( "#slider-range-distance" ).slider({
+        range: true,
+        min: 0,
+        max: 2000,
+        values: [ min_distance, max_distance ],
+        slide: function( event, ui ) {
+          $( "#min_distance" ).val( ui.values[ 0 ]) + $( "#max_distance" ).val( ui.values[ 1 ]) ;
+        }
+      }); 
     } );
     </script>
 {% endblock %}

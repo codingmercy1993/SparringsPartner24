@@ -33,7 +33,7 @@ class SearchProfileForm(forms.ModelForm):
         exclude = ['userprofile']
 
 class SearchEngineForm(forms.Form):
-    max_distance = forms.IntegerField(required=False, initial=900)
+    max_distance = forms.IntegerField(required=False, widget=forms.NumberInput(attrs={'type':'range', 'step': '2'}))
     choices_dict = [('boxen', 'Boxen'), ('thai', 'Thai'), ('mma', 'MMA')]
     martial_art = forms.CharField(widget = forms.SelectMultiple(choices = choices_dict), required=False )
 
@@ -47,8 +47,7 @@ class SearchEngineForm(forms.Form):
     min_fights = forms.IntegerField(required=False, initial = 0)
 
     max_experience_years = forms.IntegerField(required = False, initial = 50)
-    #min_experience_years = forms.IntegerField(required = False, initial = 0)
-    min_experience_years = forms.IntegerField(widget=forms.NumberInput(attrs={'type':'range', 'step': '2'})) 
+    min_experience_years = forms.IntegerField(required = False, initial = 0)
 
 
 
