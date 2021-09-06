@@ -1,3 +1,5 @@
+import datetime
+
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponseRedirect
 from django.urls import reverse
@@ -127,6 +129,7 @@ def edit_fighter_profile(request):
     else:
         fighter_profile = get_object_or_404(FighterProfile, pk = current_user.id)
         form = FighterProfileForm(instance = fighter_profile)
+        #form.initial['birthday']= datetime.datetime.now()
         return render(request, 'SparringsPartner24/create_profile.html', {'form': form})
 
 @login_required

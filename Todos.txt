@@ -18,7 +18,7 @@
 - deployen
 - fighterprofile    
     - dropdown für martial art
-    - birthday errechnen (age field berechnen)
+    - birthday errechnen (age field berechnen) (in view controller berechnen und von seite injecten, bei suche wieder übersetzen)
     - distance berechnen 
 
 

@@ -5,6 +5,8 @@ from .models import UserProfile, FighterProfile, SearchProfile
 from django.contrib.auth.forms import UserCreationForm
 
 
+choices_dict = [('boxen', 'Boxen'), ('thai', 'Thai'), ('mma', 'MMA'), ('bjj', 'BJJ'), ("kickboxing", "Kickboxing"), ("bareknuckle", "Bareknuckle")]
+
 class UserProfileCreationForm(UserCreationForm):
 
     class Meta:
@@ -27,6 +29,9 @@ class FighterProfileForm(forms.ModelForm):
         model = FighterProfile
         exclude = ['userprofile']
 
+    #martial_art = forms.CharField(widget=forms.SelectMultiple(choices=choices_dict), required=False)
+
+
 class SearchProfileForm(forms.ModelForm):
     class Meta:
         model = SearchProfile
@@ -34,7 +39,6 @@ class SearchProfileForm(forms.ModelForm):
 
 class SearchEngineForm(forms.Form):
     max_distance = forms.IntegerField(required=False, widget=forms.NumberInput(attrs={'type':'range', 'step': '2'}))
-    choices_dict = [('boxen', 'Boxen'), ('thai', 'Thai'), ('mma', 'MMA')]
     martial_art = forms.CharField(widget = forms.SelectMultiple(choices = choices_dict), required=False )
 
     max_weight = forms.IntegerField(required=False, initial = 100)
