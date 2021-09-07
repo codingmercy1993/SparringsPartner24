@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3f9893f-f3ac-4b44-9fdf-466f6041455c" name="Default Changelist" comment="fixing chat scheiße">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="b3f9893f-f3ac-4b44-9fdf-466f6041455c" name="Default Changelist" comment="profile layoputs usw angepasst">
+      <change afterPath="$PROJECT_DIR$/djangoexample/SparringsPartner24/city_list.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Todos.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Todos.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/djangoexample/SparringsPartner24/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoexample/SparringsPartner24/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoexample/SparringsPartner24/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoexample/SparringsPartner24/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/djangoexample/SparringsPartner24/templates/SparringsPartner24/fighter_profile_new.html" beforeDir="false" afterPath="$PROJECT_DIR$/djangoexample/SparringsPartner24/templates/SparringsPartner24/fighter_profile_new.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/djangoexample/SparringsPartner24/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoexample/SparringsPartner24/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoexample/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/djangoexample/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +37,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ChangesTree.GroupingKeys" value="" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -103,7 +103,21 @@
       <option name="project" value="LOCAL" />
       <updated>1630341635861</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="profile layoputs usw angepasst">
+      <created>1630601745660</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1630601745660</updated>
+    </task>
+    <task id="LOCAL-00009" summary="profile layoputs usw angepasst">
+      <created>1630947593829</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1630947593829</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -123,6 +137,7 @@
     <MESSAGE value="del" />
     <MESSAGE value="further integration of chat" />
     <MESSAGE value="fixing chat scheiße" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing chat scheiße" />
+    <MESSAGE value="profile layoputs usw angepasst" />
+    <option name="LAST_COMMIT_MESSAGE" value="profile layoputs usw angepasst" />
   </component>
 </project>

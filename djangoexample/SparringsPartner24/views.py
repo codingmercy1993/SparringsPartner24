@@ -5,7 +5,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.db.models import Q
 from django.contrib.auth import login
-
+from datetime import date
 # Create your views here.
 
 from django.http import HttpResponse
@@ -42,6 +42,7 @@ def register(request):
 @login_required
 def fighter_profile(request, userprofile_id):
     result = FighterProfile.objects.select_related("userprofile").get(pk=userprofile_id)
+    result.age = _birthday_to_age(result.birthday)
     search_profile = SearchProfile.objects.get(pk=userprofile_id)
 
     return render(request, 'SparringsPartner24/fighter_profile_new.html', {'profile': result, 'searchprofile': search_profile})
@@ -62,11 +63,10 @@ def search_engine(request):
                     elif key == 'min_weight':
                         filters['weight__gte'] = value
 
-                    #elif key == ['max_age']:
-                    #    filters['age__lte'] = value
-                    #elif key == ['min_age']:
-                    #    filters['age__gte'] = value
-                    #todo: calculaten mit birthday
+                    elif key == 'max_age':
+                        filters['birthday__gte'] = _age_to_birthday(value)
+                    elif key == 'min_age':
+                        filters['birthday__lte'] = _age_to_birthday(value)
 
                     elif key == 'max_fights':
                         filters['fight_record__lte'] = value
@@ -85,6 +85,7 @@ def search_engine(request):
                     elif key == 'martial_art':
                         filters['martial_art__icontains'] = value
 
+            print(filters)
             result_list = FighterProfile.objects.filter(**filters)
             print(result_list)
             return render(request, 'SparringsPartner24/fighter_list.html', {'result_list': result_list})
@@ -129,7 +130,6 @@ def edit_fighter_profile(request):
     else:
         fighter_profile = get_object_or_404(FighterProfile, pk = current_user.id)
         form = FighterProfileForm(instance = fighter_profile)
-        #form.initial['birthday']= datetime.datetime.now()
         return render(request, 'SparringsPartner24/create_profile.html', {'form': form})
 
 @login_required
@@ -138,7 +138,7 @@ def edit_search_profile(request):
     if request.method == 'POST':
         instance = get_object_or_404(SearchProfile, pk = current_user.id)
         form = SearchProfileForm(request.POST, instance = instance )
-    
+
         if form.is_valid():
             form.save()
             return HttpResponseRedirect(reverse('SparringsPartner24:index'))
@@ -154,3 +154,16 @@ def get_all_fighters(request):
 
 
     return render(request, 'SparringsPartner24/fighter_list.html', {'result_list': result_list})
+
+
+def _birthday_to_age(birthDate):
+    today = date.today()
+    age = today.year - birthDate.year - ((today.month, today.day) < (birthDate.month, birthDate.day))
+    return age
+
+def _age_to_birthday(age):
+    today = date.today()
+    birthyear = today.year - int(age)
+    birthday = datetime.datetime(year = birthyear, month=today.month, day=today.day)
+    print(f"iih {birthday}")
+    return birthday

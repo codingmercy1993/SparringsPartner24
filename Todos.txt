@@ -10,16 +10,14 @@
 
 
 - frontend spielerei:
-    - range slider (nochmal views anpassen mit ids übergbeen usw) (in search und profiles)
+    - range slider (nochmal views anpassen mit ids übergbeen usw) (in search und profiles, in searchprofile)
 - user query passt net ganz
 - nach register auf startseite bei neuladen bricht ab weil noch auf register link is
 - gender in views
 - werbung integrieren
 - deployen
-- fighterprofile    
-    - dropdown für martial art
-    - birthday errechnen (age field berechnen) (in view controller berechnen und von seite injecten, bei suche wieder übersetzen)
-    - distance berechnen 
+- fighterprofile
+    - cities mit postal code hinterlegen in file und dann distance berechnen mit https://pypi.org/project/pgeocode/
 
 
 
@@ -34,6 +32,7 @@ iwann später
 - async problem mit privat-chat und 
     dem os.environ eintrag in settings.py lösen
 - layout: so richtig schnön (https://dev.to/sm0ke/django-templates-short-introduction-and-free-samples-2878, chat layout examples nutzen)
+- geodjango oder django cities ggf. einbinden für distance berechnen
 
 
 
