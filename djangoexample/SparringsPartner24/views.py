@@ -78,9 +78,9 @@ def search_engine(request):
                     elif key == 'min_experience_years':
                         filters['experience_years__gte'] = value
 
-                    elif key == 'max_distance':
-                        # todo: distance berechnen
-                        pass
+                    elif key == 'location':
+                        if value != 'Alle':
+                            filters['location__icontains'] = value
                     
                     elif key == 'martial_art':
                         filters['martial_art__icontains'] = value

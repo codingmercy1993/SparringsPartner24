@@ -1,15 +1,25 @@
 from django import forms
-from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import UserProfile, FighterProfile, SearchProfile
 from django.contrib.auth.forms import UserCreationForm
-
+import os
+from functools import lru_cache
 
 martial_art_choices = [('boxen', 'Boxen'), ('thai', 'Thai'), ('mma', 'MMA'), ('bjj', 'BJJ'), ("kickboxing", "Kickboxing"), ("bareknuckle", "Bareknuckle")]
 
-#with open("/city_list.txt") as file:
-#    lines = file.readlines()
-#    lines = [line.rstrip() for line in lines]
+@lru_cache()
+def _get_city_choices(add_string = False):
+    with open(os.path.dirname(__file__) + "/city_list.txt") as file:
+       lines = file.readlines()
+       lines = [line.rstrip() for line in lines]
+       city_choices = []
+       if add_string:
+           city_choices.append(('Alle', 'Alle'))
+       for i in lines:
+           city_choices.append((i, i))
+
+
+    return city_choices
 
 class UserProfileCreationForm(UserCreationForm):
 
@@ -34,6 +44,7 @@ class FighterProfileForm(forms.ModelForm):
         exclude = ['userprofile']
 
     martial_art = forms.ChoiceField(choices=martial_art_choices, required=False)
+    location = forms.ChoiceField(choices=_get_city_choices(), required=False)
 
 
 class SearchProfileForm(forms.ModelForm):
@@ -44,6 +55,7 @@ class SearchProfileForm(forms.ModelForm):
 class SearchEngineForm(forms.Form):
     max_distance = forms.IntegerField(required=False, widget=forms.NumberInput(attrs={'type':'range', 'step': '2'}))
     martial_art = forms.ChoiceField(choices=martial_art_choices, required=False)
+    location = forms.ChoiceField(choices=_get_city_choices(True), required=False)
 
     max_weight = forms.IntegerField(required=False, initial = 100)
     min_weight = forms.IntegerField(required=False, initial = 0)

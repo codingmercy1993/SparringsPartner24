@@ -9,10 +9,9 @@
 <form method="post" class="uniForm">
     {% csrf_token %}
     {{ form.martial_art|as_crispy_field }}
+    {{ form.location|as_crispy_field }}
 
-    Distanz [in Km] <input type="text" id="min_distance" name="min_distance" value=0 />
-    - <input type="text" id="max_distance" name="max_distance" value = 2000 />
-    <div id="slider-range-distance"></div>
+
 
     Gewicht <input type="text" id="min_weight" name="min_weight" value=0 />
     - <input type="text" id="max_weight" name="max_weight" value = 150 />
