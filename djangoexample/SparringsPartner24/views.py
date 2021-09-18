@@ -82,6 +82,10 @@ def search_engine(request):
                         if value != 'Alle':
                             filters['location__icontains'] = value
                     
+                    elif key == 'gender':
+                        if value != 'Alle':
+                            filters['gender__icontains'] = value
+                    
                     elif key == 'martial_art':
                         filters['martial_art__icontains'] = value
 

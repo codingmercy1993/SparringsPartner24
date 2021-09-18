@@ -6,6 +6,8 @@ import os
 from functools import lru_cache
 
 martial_art_choices = [('boxen', 'Boxen'), ('thai', 'Thai'), ('mma', 'MMA'), ('bjj', 'BJJ'), ("kickboxing", "Kickboxing"), ("bareknuckle", "Bareknuckle")]
+gender_choices = [('male', 'Male'), ('female', 'Female'), ('diverse', 'Diverse')]
+all_gender_choices = [('male', 'Male'), ('female', 'Female'), ('diverse', 'Diverse'),('Alle', 'Alle')]
 
 @lru_cache()
 def _get_city_choices(add_string = False):
@@ -45,18 +47,20 @@ class FighterProfileForm(forms.ModelForm):
 
     martial_art = forms.ChoiceField(choices=martial_art_choices, required=False)
     location = forms.ChoiceField(choices=_get_city_choices(), required=False)
+    gender = forms.ChoiceField(choices=gender_choices, required=False)
 
 
 class SearchProfileForm(forms.ModelForm):
     class Meta:
         model = SearchProfile
         exclude = ['userprofile']
+    gender = forms.ChoiceField(choices=all_gender_choices, required=False)
 
 class SearchEngineForm(forms.Form):
     max_distance = forms.IntegerField(required=False, widget=forms.NumberInput(attrs={'type':'range', 'step': '2'}))
     martial_art = forms.ChoiceField(choices=martial_art_choices, required=False)
     location = forms.ChoiceField(choices=_get_city_choices(True), required=False)
-
+    gender = forms.ChoiceField(choices=all_gender_choices, required=False)
     max_weight = forms.IntegerField(required=False, initial = 100)
     min_weight = forms.IntegerField(required=False, initial = 0)
     

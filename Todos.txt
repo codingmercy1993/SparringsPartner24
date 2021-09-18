@@ -5,17 +5,18 @@
 - python manage.py migrate
 - python manage.py run_chat_server
 - python -m smtpd -n -c DebuggingServer localhost:1025
-- source /Users/Deka/PycharmProjects/SparringPartner24/.venv/bin/activate
-- /usr/local/bin/python3.9
+- source /Users/marvindeka/Desktop/Coding/Venvs/sp24venv/bin/activate
+
 
 
 - frontend spielerei:
     - range slider (nochmal views anpassen mit ids übergbeen usw) (in search und profiles, in searchprofile)
 - user query passt net ganz
 - nach register auf startseite bei neuladen bricht ab weil noch auf register link is
-- gender in views (als dropdown)
+- city in preference profile
 - werbung integrieren
 - deployen
+
 
 
 
