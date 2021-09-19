@@ -87,11 +87,14 @@ def search_engine(request):
                             filters['gender__icontains'] = value
                     
                     elif key == 'martial_art':
-                        filters['martial_art__icontains'] = value
+                        if value != 'Alle':
+                            filters['martial_art__icontains'] = value
 
             print(filters)
             result_list = FighterProfile.objects.filter(**filters)
             print(result_list)
+            for result in result_list:
+                result.age = _birthday_to_age(result.birthday)
             return render(request, 'SparringsPartner24/fighter_list.html', {'result_list': result_list})
     else:
         form = SearchEngineForm()
@@ -156,6 +159,8 @@ def edit_search_profile(request):
 def get_all_fighters(request):
     result_list = FighterProfile.objects.select_related("userprofile").all()
 
+    for result in result_list:
+        result.age = _birthday_to_age(result.birthday)
 
     return render(request, 'SparringsPartner24/fighter_list.html', {'result_list': result_list})
 

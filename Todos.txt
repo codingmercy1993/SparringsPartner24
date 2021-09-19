@@ -11,12 +11,11 @@
 
 - frontend spielerei:
     - range slider (nochmal views anpassen mit ids übergbeen usw) (in search und profiles, in searchprofile)
-- user query passt net ganz
 - nach register auf startseite bei neuladen bricht ab weil noch auf register link is
 - city in preference profile
 - werbung integrieren
-- deployen
-
+- deployable machen
+- pic hochladen können (https://stackoverflow.com/questions/5871730/how-to-upload-a-file-in-django)
 
 
 
@@ -25,7 +24,6 @@
 
 
 iwann später
-- pic hochladen können
 - private chat komplett integrieren
 - datenbank
 - async problem mit privat-chat und 
